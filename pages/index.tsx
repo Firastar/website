@@ -5,11 +5,7 @@ import { GetStaticProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 
-interface Props {
-  locale: string;
-}
-
-const Home: NextPage<Props> = ({ locale }) => {
+const Home: NextPage = () => {
   const { theme, setTheme } = useTheme();
   const { t } = useTranslation();
 

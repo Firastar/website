@@ -1,12 +1,15 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 // This file sets a custom webpack configuration to use your Next.js app
 // with Sentry.
 // https://nextjs.org/docs/api-reference/next.config.js/introduction
 // https://docs.sentry.io/platforms/javascript/guides/nextjs/
 
-const { withSentryConfig } = require('@sentry/nextjs');
+const { withSentryConfig } = require("@sentry/nextjs");
+const { i18n } = require("./next-i18next.config");
 
 const moduleExports = {
   // Your existing module.exports
+  i18n,
 };
 
 const sentryWebpackPluginOptions = {

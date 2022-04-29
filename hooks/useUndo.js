@@ -7,7 +7,7 @@ const initialState = {
   // Current state value
   present: null,
   // Will contain "future" state values if we undo (so we can redo)
-  future: []
+  future: [],
 };
 
 // Our reducer function to handle state changes based on action
@@ -22,7 +22,7 @@ const reducer = (state, action) => {
       return {
         past: newPast,
         present: previous,
-        future: [present, ...future]
+        future: [present, ...future],
       };
     case "REDO":
       const next = future[0];
@@ -31,7 +31,7 @@ const reducer = (state, action) => {
       return {
         past: [...past, present],
         present: next,
-        future: newFuture
+        future: newFuture,
       };
     case "SET":
       const { newPresent } = action;
@@ -42,14 +42,14 @@ const reducer = (state, action) => {
       return {
         past: [...past, present],
         present: newPresent,
-        future: []
+        future: [],
       };
     case "CLEAR":
       const { initialPresent } = action;
 
       return {
         ...initialState,
-        present: initialPresent
+        present: initialPresent,
       };
   }
 };
@@ -57,7 +57,7 @@ const reducer = (state, action) => {
 const useHistory = initialPresent => {
   const [state, dispatch] = useReducer(reducer, {
     ...initialState,
-    present: initialPresent
+    present: initialPresent,
   });
 
   const canUndo = state.past.length !== 0;

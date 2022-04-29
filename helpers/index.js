@@ -9,7 +9,7 @@ let persianNumbers = [
   /۶/g,
   /۷/g,
   /۸/g,
-  /۹/g
+  /۹/g,
 ];
 let arabicNumbers = [
   /٠/g,
@@ -21,7 +21,7 @@ let arabicNumbers = [
   /٦/g,
   /٧/g,
   /٨/g,
-  /٩/g
+  /٩/g,
 ];
 export const numbersToEnglish = str => {
   if (typeof str === "string") {
@@ -90,7 +90,7 @@ export const setWithExpiry = (key, value, ttl) => {
   const now = new Date();
   const item = {
     data: value,
-    _expires: now.getTime() + ttl
+    _expires: now.getTime() + ttl,
   };
   localStorage.setItem(key, JSON.stringify(item));
 };

@@ -104,7 +104,7 @@ function useAudio(audioRef, barRef) {
     pause,
     goForward,
     goBackward,
-    handleDrag
+    handleDrag,
   };
 }
 

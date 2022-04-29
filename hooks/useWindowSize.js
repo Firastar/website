@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 export default function useWindowSize() {
   const [windowSize, setWindowSize] = useState({
     width: undefined,
-    height: undefined
+    height: undefined,
   });
 
   useEffect(() => {
@@ -12,7 +12,7 @@ export default function useWindowSize() {
       // Set window width/height to state
       setWindowSize({
         width: window.innerWidth,
-        height: window.innerHeight
+        height: window.innerHeight,
       });
     }
 
@@ -33,6 +33,6 @@ export default function useWindowSize() {
     md: windowSize.width >= 768,
     lg: windowSize.width >= 1024,
     xl: windowSize.width >= 1280,
-    xxl: windowSize.width >= 1536
+    xxl: windowSize.width >= 1536,
   };
 }

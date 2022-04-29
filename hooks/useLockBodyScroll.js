@@ -6,7 +6,7 @@ export default function useLockBodyScroll(open) {
     // Get original body overflow
     const originalStyle = {
       overflow: window.getComputedStyle(document.body).overflow,
-      paddingRight: window.getComputedStyle(document.body).paddingRight
+      paddingRight: window.getComputedStyle(document.body).paddingRight,
     };
 
     const hasVScroll = window.innerWidth > document.body.clientWidth;

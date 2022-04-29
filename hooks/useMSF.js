@@ -16,7 +16,7 @@ const useMSF = (key, expiry = 86400000) => {
   return {
     data: getWithExpiry(key) || {},
     setData,
-    removeData
+    removeData,
   };
 };
 
@@ -28,7 +28,7 @@ const setWithExpiry = (key, value, ttl) => {
   const now = new Date();
   const item = {
     data: value,
-    _expires: now.getTime() + ttl
+    _expires: now.getTime() + ttl,
   };
   localStorage.setItem(key, JSON.stringify(item));
 };
