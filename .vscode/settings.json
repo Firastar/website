@@ -21,5 +21,8 @@
     "titleBar.activeBackground": "#15C39A",
     "titleBar.inactiveBackground": "#15c39ad6"
   },
-  "conventionalCommits.scopes": []
+  "conventionalCommits.scopes": [],
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
