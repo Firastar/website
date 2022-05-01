@@ -1,0 +1,252 @@
+﻿@layer base {
+	@font-face {
+		font-family: dana;
+		font-style: normal;
+		font-weight: 10;
+		src: url("./eot/dana-fanum-thin.eot");
+		src:
+			url("./eot/dana-fanum-thin.eot?#iefix") format("embedded-opentype"),
+			url("./woff2/dana-fanum-thin.woff2") format("woff2"),
+			url("./woff/dana-fanum-thin.woff")
+			format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+ */
+	}
+
+	@font-face {
+		font-family: dana;
+		font-style: normal;
+		font-weight: 200;
+		src: url("./eot/dana-fanum-extralight.eot");
+		src:
+			url("./eot/dana-fanum-extralight.eot?#iefix") format("embedded-opentype"),
+			url("./woff2/dana-fanum-extralight.woff2") format("woff2"),
+			url("./woff/dana-fanum-extralight.woff")
+			format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+ */
+	}
+
+	@font-face {
+		font-family: dana;
+		font-style: normal;
+		font-weight: 300;
+		src: url("./eot/dana-fanum-light.eot");
+		src:
+			url("./eot/dana-fanum-light.eot?#iefix") format("embedded-opentype"),
+			url("./woff2/dana-fanum-light.woff2") format("woff2"),
+			url("./woff/dana-fanum-light.woff")
+			format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+ */
+	}
+
+	@font-face {
+		font-family: dana;
+		font-style: normal;
+		font-weight: 500;
+		src: url("./eot/dana-fanum-medium.eot");
+		src:
+			url("./eot/dana-fanum-medium.eot?#iefix") format("embedded-opentype"),
+			url("./woff2/dana-fanum-medium.woff2") format("woff2"),
+			url("./woff/dana-fanum-medium.woff")
+			format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+ */
+	}
+
+	@font-face {
+		font-family: dana;
+		font-style: normal;
+		font-weight: 600;
+		src: url("./eot/dana-fanum-demibold.eot");
+		src:
+			url("./eot/dana-fanum-demibold.eot?#iefix") format("embedded-opentype"),
+			url("./woff2/dana-fanum-demibold.woff2") format("woff2"),
+			url("./woff/dana-fanum-demibold.woff")
+			format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+ */
+	}
+
+	@font-face {
+		font-family: dana;
+		font-style: normal;
+		font-weight: 750;
+		src: url("./eot/dana-fanum-ultrabold.eot");
+		src:
+			url("./eot/dana-fanum-ultrabold.eot?#iefix") format("embedded-opentype"),
+			url("./woff2/dana-fanum-ultrabold.woff2") format("woff2"),
+			url("./woff/dana-fanum-ultrabold.woff")
+			format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+ */
+	}
+
+	@font-face {
+		font-family: dana;
+		font-style: normal;
+		font-weight: 800;
+		src: url("./eot/dana-fanum-extrabold.eot");
+		src:
+			url("./eot/dana-fanum-extrabold.eot?#iefix") format("embedded-opentype"),
+			url("./woff2/dana-fanum-extrabold.woff2") format("woff2"),
+			url("./woff/dana-fanum-extrabold.woff")
+			format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+ */
+	}
+
+	@font-face {
+		font-family: dana;
+		font-style: normal;
+		font-weight: 900;
+		src: url("./eot/dana-fanum-black.eot");
+		src:
+			url("./eot/dana-fanum-black.eot?#iefix") format("embedded-opentype"),
+			url("./woff2/dana-fanum-black.woff2") format("woff2"),
+			url("./woff/dana-fanum-black.woff")
+			format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+ */
+	}
+
+	@font-face {
+		font-family: dana;
+		font-style: normal;
+		font-weight: bold;
+		src: url("./eot/dana-fanum-bold.eot");
+		src:
+			url("./eot/dana-fanum-bold.eot?#iefix") format("embedded-opentype"),
+			url("./woff2/dana-fanum-bold.woff2") format("woff2"),
+			url("./woff/dana-fanum-bold.woff")
+			format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+ */
+	}
+
+	@font-face {
+		font-family: dana;
+		font-style: normal;
+		font-weight: normal;
+		src: url("./eot/dana-fanum-regular.eot");
+		src:
+			url("./eot/dana-fanum-regular.eot?#iefix") format("embedded-opentype"),
+			url("./woff2/dana-fanum-regular.woff2") format("woff2"),
+			url("./woff/dana-fanum-regular.woff")
+			format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+ */
+	}
+
+	/**
+italic fonts
+**/
+
+	@font-face {
+		font-family: dana;
+		font-style: italic;
+		font-weight: 10;
+		src: url("./eot/dana-fanum-thinitalic.eot");
+		src:
+			url("./eot/dana-fanum-thinitalic.eot?#iefix") format("embedded-opentype"),
+			url("./woff2/dana-fanum-thinitalic.woff2") format("woff2"),
+			url("./woff/dana-fanum-thinitalic.woff")
+			format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+ */
+	}
+
+	@font-face {
+		font-family: dana;
+		font-style: italic;
+		font-weight: 200;
+		src: url("./eot/dana-fanum-extralightitalic.eot");
+		src:
+			url("./eot/dana-fanum-extralightitalic.eot?#iefix")
+			format("embedded-opentype"),
+			url("./woff2/dana-fanum-extralightitalic.woff2") format("woff2"),
+			url("./woff/dana-fanum-extralightitalic.woff") format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+ */
+	}
+
+	@font-face {
+		font-family: dana;
+		font-style: italic;
+		font-weight: 300;
+		src: url("./eot/dana-fanum-lightitalic.eot");
+		src:
+			url("./eot/dana-fanum-lightitalic.eot?#iefix")
+			format("embedded-opentype"),
+			url("./woff2/dana-fanum-lightitalic.woff2") format("woff2"),
+			url("./woff/dana-fanum-lightitalic.woff")
+			format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+ */
+	}
+
+	@font-face {
+		font-family: dana;
+		font-style: italic;
+		font-weight: 500;
+		src: url("./eot/dana-fanum-mediumitalic.eot");
+		src:
+			url("./eot/dana-fanum-mediumitalic.eot?#iefix")
+			format("embedded-opentype"),
+			url("./woff2/dana-fanum-mediumitalic.woff2") format("woff2"),
+			url("./woff/dana-fanum-mediumitalic.woff")
+			format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+ */
+	}
+
+	@font-face {
+		font-family: dana;
+		font-style: italic;
+		font-weight: 600;
+		src: url("./eot/dana-fanum-demibolditalic.eot");
+		src:
+			url("./eot/dana-fanum-demibolditalic.eot?#iefix")
+			format("embedded-opentype"),
+			url("./woff2/dana-fanum-demibolditalic.woff2") format("woff2"),
+			url("./woff/dana-fanum-demibolditalic.woff")
+			format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+ */
+	}
+
+	@font-face {
+		font-family: dana;
+		font-style: italic;
+		font-weight: 750;
+		src: url("./eot/dana-fanum-ultrabolditalic.eot");
+		src:
+			url("./eot/dana-fanum-ultrabolditalic.eot?#iefix")
+			format("embedded-opentype"),
+			url("./woff2/dana-fanum-ultrabolditalic.woff2") format("woff2"),
+			url("./woff/dana-fanum-ultrabolditalic.woff")
+			format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+ */
+	}
+
+	@font-face {
+		font-family: dana;
+		font-style: italic;
+		font-weight: 800;
+		src: url("./eot/dana-fanum-extrabolditalic.eot");
+		src:
+			url("./eot/dana-fanum-extrabolditalic.eot?#iefix")
+			format("embedded-opentype"),
+			url("./woff2/dana-fanum-extrabolditalic.woff2") format("woff2"),
+			url("./woff/dana-fanum-extrabolditalic.woff")
+			format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+ */
+	}
+
+	@font-face {
+		font-family: dana;
+		font-style: italic;
+		font-weight: 900;
+		src: url("./eot/dana-fanum-blackitalic.eot");
+		src:
+			url("./eot/dana-fanum-blackitalic.eot?#iefix")
+			format("embedded-opentype"),
+			url("./woff2/dana-fanum-blackitalic.woff2") format("woff2"),
+			url("./woff/dana-fanum-blackitalic.woff")
+			format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+ */
+	}
+
+	@font-face {
+		font-family: dana;
+		font-style: italic;
+		font-weight: bold;
+		src: url("./eot/dana-fanum-bolditalic.eot");
+		src:
+			url("./eot/dana-fanum-bolditalic.eot?#iefix") format("embedded-opentype"),
+			url("./woff2/dana-fanum-bolditalic.woff2") format("woff2"),
+			url("./woff/dana-fanum-bolditalic.woff")
+			format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+ */
+	}
+
+	@font-face {
+		font-family: dana;
+		font-style: italic;
+		font-weight: normal;
+		src: url("./eot/dana-fanum-regularitalic.eot");
+		src:
+			url("./eot/dana-fanum-regularitalic.eot?#iefix")
+			format("embedded-opentype"),
+			url("./woff2/dana-fanum-regularitalic.woff2") format("woff2"),
+			url("./woff/dana-fanum-regularitalic.woff")
+			format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+ */
+	}
+}
