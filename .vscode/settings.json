@@ -24,5 +24,8 @@
   "conventionalCommits.scopes": [],
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
   }
 }
