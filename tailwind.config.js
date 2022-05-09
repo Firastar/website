@@ -17,7 +17,11 @@ module.exports = {
       "3xl": "1560px",
       "4xl": "1920px",
     },
-    colors: {},
+    colors: {
+      "main-color": "#15C39A",
+      black: "#0E1019",
+      white: "#f9f9f9",
+    },
     extend: {
       fontSize: {
         1: ".25rem",
@@ -49,7 +53,11 @@ module.exports = {
       transitionDelay: {
         0: "0ms",
       },
-      backgroundImage: {},
+      backgroundImage: {
+        "green-shadow":
+          "linear-gradient(180deg, rgba(169, 217, 208, 0.35) 0%, rgba(169, 217, 208, 0) 100%)",
+      },
+      backgroundColor: {},
       boxShadow: {},
       zIndex: {
         100: "100",

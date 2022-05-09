@@ -3,6 +3,7 @@ import Head from "next/head";
 import { ThemeProvider } from "next-themes";
 import { appWithTranslation } from "next-i18next";
 import "../styles/globals.scss";
+import Layout from "../layouts/Layout";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -96,7 +97,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           content="mstile-310x310.png"
         />
       </Head>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </ThemeProvider>
   );
 }
