@@ -1,7 +1,6 @@
 import React from "react";
 import classes from "./Header.module.scss";
 import Image from "next/image";
-import logo from "/public/icons/apple-touch-icon-57x57.png";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -10,7 +9,7 @@ const Header = () => {
   return (
     <div className={classes.header}>
       <div className={classes.firastarLogoTitle}>
-        <Image src={logo} alt="logo" />
+        <Image src="/icons/logo.png" alt="logo" width={48} height={48} />
         <p>فیراستار</p>
       </div>
       <div className={classes.menu}>

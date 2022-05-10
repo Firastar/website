@@ -6,12 +6,9 @@
 	@apply flex justify-center items-center basis-1/5 text-main-color text-6 font-bold gap-3;
 }
 
-// :global(.dark) .firastarLogoTitle {
-// 	@apply text-white ;
-// }
-
 .menu {
 	@apply flex justify-center items-center flex-1 gap-12  text-black dark:text-white text-5 font-normal;
+	@apply whitespace-nowrap;
 }
 
 .flexHandler {
