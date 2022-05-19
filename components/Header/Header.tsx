@@ -45,7 +45,7 @@ const Header = () => {
     <div className={classes.header}>
       <div className={classes.firastarLogoTitle}>
         <Image src="/icons/logo.png" alt="logo" width={48} height={48} />
-        <p>فیراستار</p>
+        <p>{t("common:main-title")}</p>
       </div>
       <div className={classes.menu}>
         {routes.map(route => {
