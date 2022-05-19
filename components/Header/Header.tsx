@@ -1,6 +1,5 @@
 import classes from "./Header.module.scss";
 import Image from "next/image";
-import logo from "/public/icons/apple-touch-icon-57x57.png";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
@@ -45,8 +44,8 @@ const Header = () => {
   return (
     <div className={classes.header}>
       <div className={classes.firastarLogoTitle}>
-        <Image src={logo} alt="logo" />
-        <p>{t("common:main-title")}</p>
+        <Image src="/icons/logo.png" alt="logo" width={48} height={48} />
+        <p>فیراستار</p>
       </div>
       <div className={classes.menu}>
         {routes.map(route => {
