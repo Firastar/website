@@ -4,6 +4,7 @@ import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import { GetStaticProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import CompareSlider from "../components/CompareSlider/CompareSlider";
 
 const Home: NextPage = () => {
   const { theme, setTheme } = useTheme();
@@ -31,6 +32,7 @@ const Home: NextPage = () => {
           Toggl lang
         </button>
       </div>
+      <CompareSlider />
     </div>
   );
 };

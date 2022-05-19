@@ -1,1 +1,4 @@
-{ "test": "This is a Firaster" }
+{
+  "test": "This is a Firaster",
+  "slider-title": "Before and after using Firastar"
+}
