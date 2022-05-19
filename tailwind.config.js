@@ -69,6 +69,7 @@ module.exports = {
     },
   },
   plugins: [
+    // require("tailwindcss-rtl"),
     plugin(function ({ addUtilities }) {
       addUtilities({
         // ".no-select": {

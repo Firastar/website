@@ -1,7 +1,7 @@
 .layout {
-	@apply relative h-96;
+	@apply relative h-[2000px];
 }
 
 .greenShadow {
-	@apply absolute -z-1000 right-0 top-0 bg-green-shadow w-[10%] h-[1024px] blur-[40px];
+	@apply absolute -z-1000 right-0 top-0 bg-green-shadow w-[10%] h-[1024px] blur-[40px] dark:hidden;
 }
