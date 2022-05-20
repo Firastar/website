@@ -3,9 +3,18 @@
 }
 
 .desktopCompareSlider {
-	@apply hidden md:block px-[4.375rem];
+	@apply hidden md:block md:px-[4.375rem];
 }
 
 .mobileCompareSlider {
-	@apply md:hidden px-[4.375rem];
+	@apply md:hidden px-4;
+}
+
+.handle {
+	@apply grid h-full place-content-center;
+}
+
+.arrowWrap {
+	@apply inline-flex gap-x-3 px-1.5 py-3 rounded-[50%] bg-[#bfbfbf] bg-opacity-50 rotate-90;
+	@apply md:gap-x-4 md:px-2 md:py-4  md:rotate-0;
 }

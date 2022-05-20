@@ -5,6 +5,8 @@ import {
   ReactCompareSlider,
   ReactCompareSliderImage,
 } from "react-compare-slider";
+import LeftArrow from "../../assets/svgs/LeftArrow";
+import RightArrow from "../../assets/svgs/RightArrow";
 
 const CompareSlider = () => {
   const { locale } = useRouter();
@@ -15,6 +17,14 @@ const CompareSlider = () => {
       <p className={classes.compareSliderTitle}>{t("home:slider-title")}</p>
       <div className={classes.desktopCompareSlider}>
         <ReactCompareSlider
+          handle={
+            <div className={classes.handle}>
+              <div className={classes.arrowWrap}>
+                <LeftArrow width={14} height={28} color="white" />
+                <RightArrow width={14} height={28} color="white" />
+              </div>
+            </div>
+          }
           itemOne={
             <ReactCompareSliderImage
               src="/images/decorative-pic.png"
@@ -36,11 +46,20 @@ const CompareSlider = () => {
           position={50}
           style={{
             direction: "ltr",
+            borderRadius: "0.75rem",
           }}
         />
       </div>
       <div className={classes.mobileCompareSlider}>
         <ReactCompareSlider
+          handle={
+            <div className={classes.handle}>
+              <div className={classes.arrowWrap}>
+                <LeftArrow width={14} height={28} color="white" />
+                <RightArrow width={14} height={28} color="white" />
+              </div>
+            </div>
+          }
           itemOne={
             <ReactCompareSliderImage
               src="/images/decorative-pic2.png"
@@ -63,6 +82,7 @@ const CompareSlider = () => {
           position={50}
           style={{
             direction: "ltr",
+            borderRadius: "0.75rem",
           }}
         />
       </div>
