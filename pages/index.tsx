@@ -7,7 +7,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import CompareSlider from "../components/CompareSlider/CompareSlider";
 
 const Home: NextPage = () => {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const { t } = useTranslation();
   const router = useRouter();
 
@@ -18,7 +18,7 @@ const Home: NextPage = () => {
         <button
           type="button"
           className="border p-2 rounded"
-          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+          onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}>
           Toggl Theme
         </button>
         <button
