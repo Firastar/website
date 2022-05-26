@@ -6,6 +6,7 @@ module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
+    "./assets/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     screens: {
@@ -18,9 +19,10 @@ module.exports = {
       "4xl": "1920px",
     },
     colors: {
-      "main-color": "#15C39A",
+      primary: "#15C39A",
       black: "#0E1019",
       white: "#f9f9f9",
+      gray: "#757575",
     },
     extend: {
       fontSize: {

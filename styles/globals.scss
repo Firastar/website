@@ -31,3 +31,38 @@ a {
 * {
 	box-sizing: border-box;
 }
+
+// override react toggle styles
+.react-toggle-track {
+	background-color: #757575 !important;
+}
+
+.react-toggle-track-check {
+	width: 20px !important;
+	height: 20px !important;
+	left: 5px !important;
+	top: 1px !important;
+}
+
+.react-toggle-track-x {
+	width: 20px !important;
+	height: 20px !important;
+	right: 4px !important;
+	top: 1px !important;
+}
+
+.react-toggle--checked .react-toggle-thumb {
+	border-color: #757575 !important;
+}
+
+.react-toggle--focus .react-toggle-thumb {
+	box-shadow: none !important;
+}
+
+.react-toggle:active:not(.react-toggle--disabled) .react-toggle-thumb {
+	box-shadow: 0 0 3px 3px #15c39a !important;
+}
+
+.react-toggle:hover .react-toggle-thumb {
+	box-shadow: 0 0 3px 3px #15c39a !important;
+}

@@ -1,0 +1,19 @@
+.popupWrap {
+	@apply w-[93px] shadow-[0_0_5px_0_rgba(0,0,0,0.4)] absolute top-8 left-5 flex flex-col p-2 gap-2;
+}
+
+.redioWrap {
+	@apply flex justify-center items-center gap-2;
+}
+
+.radioButton {
+	@apply appearance-none h-[11px] w-[11px] border border-[gray] rounded-full bg-white relative;
+	@apply ltr:bottom-0.5 checked:border-none focus:outline-none transition duration-200 cursor-pointer;
+	@apply checked:after:content-["\25C9"] checked:after:text-primary checked:after:absolute;
+	@apply checked:after:top-[-0.25rem] checked:after:right-[-0.08rem] ;
+	@apply checked:after:mx-auto checked:after:rounded-full;
+}
+
+.label {
+	@apply text-3 font-normal flex-1 cursor-pointer;
+}

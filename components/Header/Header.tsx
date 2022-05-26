@@ -1,24 +1,15 @@
-import classes from "./Header.module.scss";
-import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
-import { useTheme } from "next-themes";
-import Toggle from "react-toggle";
-import "react-toggle/style.css";
-import { useEffect, useState } from "react";
 import { useMemo } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import ThemeSwitcher from "../ThemeSwitcher/ThemeSwitcher";
+import classes from "./Header.module.scss";
+import LangSwitcher from "../LangSwitcher/LangSwitcher";
 
 const Header = () => {
   const router = useRouter();
   const { t } = useTranslation();
-  const { theme, setTheme } = useTheme();
-
-  const [isThemeMounted, setIsThemeMounted] = useState(false);
-
-  useEffect(() => {
-    theme ? setIsThemeMounted(true) : null;
-  }, [theme]);
 
   const routes = useMemo(
     () => [
@@ -76,15 +67,10 @@ const Header = () => {
           );
         })}
       </div>
-      {isThemeMounted && (
-        <div className={classes.flexHandler}>
-          <Toggle
-            defaultChecked={theme === "light" ? true : false}
-            // className="custom-classname"
-            onChange={() => setTheme(theme === "light" ? "dark" : "light")}
-          />
-        </div>
-      )}
+      <div className={classes.flexHandler}>
+        <LangSwitcher />
+        {ThemeSwitcher()}
+      </div>
     </div>
   );
 };
