@@ -1,23 +1,8 @@
-import Document, {
-  Html,
-  Head,
-  Main,
-  NextScript,
-  DocumentContext,
-} from "next/document";
+import { Html, Head, Main, NextScript, DocumentProps } from "next/document";
 
-class MyDocument extends Document {
-  static async getInitialProps(ctx: DocumentContext) {
-    const initialProps = await Document.getInitialProps(ctx);
-    // locale is in ctx.locale
-
-    return { ...initialProps, locale: ctx?.locale || "fa" };
-  }
-
-  render = () => (
-    <Html
-      dir={this.props.locale === "fa" ? "rtl" : "ltr"}
-      lang={this.props.locale}>
+const MyDocument = ({ locale }: DocumentProps) => {
+  return (
+    <Html dir={locale === "fa" ? "rtl" : "ltr"} lang={locale}>
       <Head>
         <link
           rel="apple-touch-icon-precomposed"
@@ -112,6 +97,6 @@ class MyDocument extends Document {
       </body>
     </Html>
   );
-}
+};
 
 export default MyDocument;

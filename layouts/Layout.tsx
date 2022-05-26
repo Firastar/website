@@ -10,7 +10,7 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <div className={classes.layout}>
-        <div className={classes.greenShadow}></div>
+        <div className={classes.greenShadow} />
         <Header />
         {children}
       </div>

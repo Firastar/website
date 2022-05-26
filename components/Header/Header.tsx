@@ -7,6 +7,7 @@ import { useTheme } from "next-themes";
 import Toggle from "react-toggle";
 import "react-toggle/style.css";
 import { useEffect, useState } from "react";
+import { useMemo } from "react";
 
 const Header = () => {
   const router = useRouter();
@@ -19,38 +20,41 @@ const Header = () => {
     theme ? setIsThemeMounted(true) : null;
   }, [theme]);
 
-  const routes = [
-    {
-      id: 1,
-      title: t("menu-items:item-one"),
-      path: "/",
-    },
-    {
-      id: 2,
-      title: t("menu-items:item-two"),
-      path: "/features",
-    },
-    {
-      id: 3,
-      title: t("menu-items:item-three"),
-      path: "/sample",
-    },
-    {
-      id: 4,
-      title: t("menu-items:item-four"),
-      path: "/source-code",
-    },
-    {
-      id: 5,
-      title: t("menu-items:item-five"),
-      path: "/about-us",
-    },
-    {
-      id: 6,
-      title: t("menu-items:item-six"),
-      path: "/contact-us",
-    },
-  ];
+  const routes = useMemo(
+    () => [
+      {
+        id: 1,
+        title: t("menu-items:item-one"),
+        path: "/",
+      },
+      {
+        id: 2,
+        title: t("menu-items:item-two"),
+        path: "/features",
+      },
+      {
+        id: 3,
+        title: t("menu-items:item-three"),
+        path: "/sample",
+      },
+      {
+        id: 4,
+        title: t("menu-items:item-four"),
+        path: "/source-code",
+      },
+      {
+        id: 5,
+        title: t("menu-items:item-five"),
+        path: "/about-us",
+      },
+      {
+        id: 6,
+        title: t("menu-items:item-six"),
+        path: "/contact-us",
+      },
+    ],
+    [t]
+  );
 
   return (
     <div className={classes.header}>
@@ -61,7 +65,7 @@ const Header = () => {
       <div className={classes.menu}>
         {routes.map(route => {
           return (
-            <Link href={route.path} passHref key={route.id}>
+            <Link href={route.path} key={route.id}>
               <a
                 className={
                   router.pathname === route.path ? classes.activeMenu : ""
