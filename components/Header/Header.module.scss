@@ -12,7 +12,7 @@
 }
 
 .flexHandler {
-	@apply basis-1/5;
+	@apply basis-1/5 flex justify-center items-center;
 }
 
 .activeMenu {
