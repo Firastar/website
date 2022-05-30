@@ -17,10 +17,10 @@ const ThemeSwitcher = () => {
   return (
     isThemeMounted && (
       <Toggle
-        defaultChecked={theme === "light" ? true : false}
+        defaultChecked={theme === "dark" ? true : false}
         icons={{
-          checked: <Sun height={20} width={20} />,
-          unchecked: <Moon height={18} width={18} />,
+          checked: <Moon height={18} width={18} />,
+          unchecked: <Sun height={20} width={20} />,
         }}
         onChange={() => setTheme(theme === "light" ? "dark" : "light")}
       />
