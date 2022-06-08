@@ -1,0 +1,20 @@
+.wrapper {
+	@apply hidden lg:flex;
+}
+
+.firastarLogoTitle {
+	@apply flex justify-start items-center basis-1/5 text-primary text-5 xl:text-6 font-bold gap-3;
+}
+
+.menu {
+	@apply flex justify-center items-center flex-1 text-black-medium dark:text-white;
+	@apply font-normal whitespace-nowrap text-4 xl:text-5 gap-8 xl:gap-12;
+}
+
+.switchers {
+	@apply basis-1/5 flex justify-end items-center gap-5;
+}
+
+.activeMenu {
+	@apply text-primary;
+}

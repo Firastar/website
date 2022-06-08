@@ -1,0 +1,15 @@
+.wrapper {
+	@apply flex lg:hidden relative items-center;
+}
+
+.firastarLogoTitle {
+	@apply flex justify-center items-center flex-1 min-w-[7.5rem] text-primary text-4 font-bold gap-3;
+}
+
+.menu {
+	@apply flex items-center flex-1;
+}
+
+.switchers {
+	@apply flex-1 flex justify-end items-center;
+}

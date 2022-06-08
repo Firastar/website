@@ -5,8 +5,6 @@
 
 html,
 body {
-	padding: 0;
-	margin: 0;
 	font-family:
 		dana,
 		tahoma,
@@ -21,6 +19,28 @@ body {
 		"Droid Sans",
 		"Helvetica Neue",
 		sans-serif;
+}
+
+html.light {
+	color: black;
+	background-color: white;
+}
+
+html.dark {
+	color: white;
+	background: #242526;
+}
+
+body {
+	padding: 0;
+	margin: 2.1875rem 4.375rem;
+}
+
+@media only screen and (max-width: 1024px) {
+	body {
+		padding: 0;
+		margin: 2.1875rem;
+	}
 }
 
 a {
@@ -47,7 +67,7 @@ a {
 .react-toggle-track-x {
 	width: 20px !important;
 	height: 20px !important;
-	right: 4px !important;
+	right: 3px !important;
 	top: 1px !important;
 }
 
@@ -65,4 +85,30 @@ a {
 
 .react-toggle:hover .react-toggle-thumb {
 	box-shadow: 0 0 3px 3px #15c39a !important;
+}
+
+@media only screen and (max-width: 1024px) {
+	.react-toggle-track {
+		width: 42px !important;
+		height: 20px !important;
+	}
+
+	.react-toggle--checked .react-toggle-thumb {
+		left: 24px !important;
+	}
+
+	.react-toggle-track-check {
+		left: 2px !important;
+		top: 2px !important;
+	}
+
+	.react-toggle-track-x {
+		right: 2px !important;
+		top: 2px !important;
+	}
+
+	.react-toggle-thumb {
+		width: 18px !important;
+		height: 18px !important;
+	}
 }

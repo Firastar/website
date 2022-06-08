@@ -1,12 +1,16 @@
 import React from "react";
-import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
 import Toggle from "react-toggle";
 import "react-toggle/style.css";
 import Sun from "../../assets/svgs/Sun";
 import Moon from "../../assets/svgs/Moon";
+import { useTheme } from "next-themes";
 
-const ThemeSwitcher = () => {
+export interface ThemeSwitcherProps {
+  mobileMode?: boolean;
+}
+
+const ThemeSwitcher = ({ mobileMode = false }: ThemeSwitcherProps) => {
   // check theme is mounted
   const { theme, setTheme } = useTheme();
   const [isThemeMounted, setIsThemeMounted] = useState(false);
@@ -14,18 +18,20 @@ const ThemeSwitcher = () => {
     theme ? setIsThemeMounted(true) : null;
   }, [theme]);
 
-  return (
-    isThemeMounted && (
-      <Toggle
-        defaultChecked={theme === "dark" ? true : false}
-        icons={{
-          checked: <Moon height={18} width={18} />,
-          unchecked: <Sun height={20} width={20} />,
-        }}
-        onChange={() => setTheme(theme === "light" ? "dark" : "light")}
-      />
-    )
-  );
+  return isThemeMounted ? (
+    <Toggle
+      icons={{
+        checked: (
+          <Moon height={!mobileMode ? 18 : 16} width={!mobileMode ? 18 : 16} />
+        ),
+        unchecked: (
+          <Sun height={!mobileMode ? 20 : 18} width={!mobileMode ? 20 : 18} />
+        ),
+      }}
+      onChange={() => setTheme(theme === "light" ? "dark" : "light")}
+      checked={theme === "dark" ? true : false}
+    />
+  ) : null;
 };
 
 export default ThemeSwitcher;

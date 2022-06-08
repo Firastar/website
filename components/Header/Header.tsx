@@ -1,14 +1,10 @@
-import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
-import { useMemo } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import ThemeSwitcher from "../ThemeSwitcher/ThemeSwitcher";
-import classes from "./Header.module.scss";
-import LangSwitcher from "../LangSwitcher/LangSwitcher";
+import { useEffect, useMemo, useState } from "react";
+import DesktopHeader from "./DesktopHeader/DesktopHeader";
+import MobileHeader from "./MobileHeader/MobileHeader";
+import { useTheme } from "next-themes";
 
 const Header = () => {
-  const router = useRouter();
   const { t } = useTranslation();
 
   const routes = useMemo(
@@ -48,30 +44,10 @@ const Header = () => {
   );
 
   return (
-    <div className={classes.header}>
-      <div className={classes.firastarLogoTitle}>
-        <Image src="/icons/logo.png" alt="logo" width={48} height={48} />
-        <p>{t("common:main-title")}</p>
-      </div>
-      <div className={classes.menu}>
-        {routes.map(route => {
-          return (
-            <Link href={route.path} key={route.id}>
-              <a
-                className={
-                  router.pathname === route.path ? classes.activeMenu : ""
-                }>
-                {route.title}
-              </a>
-            </Link>
-          );
-        })}
-      </div>
-      <div className={classes.flexHandler}>
-        <LangSwitcher />
-        {ThemeSwitcher()}
-      </div>
-    </div>
+    <>
+      <DesktopHeader routes={routes} />
+      <MobileHeader routes={routes} />
+    </>
   );
 };
 

@@ -1,0 +1,23 @@
+.overlay {
+	@apply fixed z-100 w-[100vw] h-[100vh] top-0 bottom-0 right-0 left-0 bg-black-light bg-opacity-80;
+}
+
+.menuWrapp {
+	@apply absolute z-100 w-72 h-[100vh] bg-white dark:bg-gray-dark px-5 py-[2.1875rem] overflow-y-auto;
+}
+
+.ltrGrid {
+	direction: ltr;
+}
+
+.menuHeader {
+	@apply flex flex-row rtl:flex-row-reverse items-center mt-[0.4rem];
+}
+
+.firastarLogoTitle {
+	@apply flex justify-center items-center flex-1 min-w-[7.5rem] text-primary text-3 font-bold gap-1;
+}
+
+.arrow {
+	@apply cursor-pointer;
+}

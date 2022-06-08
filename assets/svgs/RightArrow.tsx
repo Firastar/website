@@ -3,7 +3,7 @@ import React from "react";
 interface RightArrowProps {
   width: number;
   height: number;
-  color: string;
+  color?: string;
 }
 
 const RightArrow = ({ width, height, color }: RightArrowProps) => {

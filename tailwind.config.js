@@ -20,9 +20,14 @@ module.exports = {
     },
     colors: {
       primary: "#15C39A",
-      black: "#0E1019",
+      secondary: "#FFBC79",
+      "black-pure": "#000000",
+      "black-ultra": "#070707",
+      "black-medium": "#0E1019",
+      "black-light": "#727272",
       white: "#f9f9f9",
-      gray: "#757575",
+      "gray-dark": "#242526",
+      "gray-light": "#E5E5E5",
     },
     extend: {
       fontSize: {
