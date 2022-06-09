@@ -3,11 +3,11 @@
 }
 
 .desktopCompareSlider {
-	@apply hidden md:block md:px-[4.375rem];
+	@apply hidden md:block;
 }
 
 .mobileCompareSlider {
-	@apply md:hidden px-4;
+	@apply md:hidden;
 }
 
 .handle {

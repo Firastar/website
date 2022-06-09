@@ -13,7 +13,8 @@ export default function useLockBodyScroll(open: boolean) {
       paddingRight: window.getComputedStyle(document.body).paddingRight,
     };
 
-    const hasVScroll = window.innerWidth > document.body.clientWidth;
+    // const hasVScroll = window.innerWidth > document.body.clientWidth;
+    const hasVScroll = document.body.scrollHeight > document.body.clientWidth;
 
     const scrollBarWidth = getScrollBarWidth();
 

@@ -19,7 +19,6 @@ const RightArrow = ({ width, height, color }: RightArrowProps) => {
       fill={color}
       height={height}
       viewBox="0 0 30.729 30.729"
-      //   style="enable-background:new 0 0 30.729 30.729;"
       xmlSpace="preserve">
       <g>
         <path

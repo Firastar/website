@@ -28,6 +28,7 @@ module.exports = {
       white: "#f9f9f9",
       "gray-dark": "#242526",
       silver: "#D7D7D7",
+      "sonic-silver": "#757575",
     },
     extend: {
       fontSize: {

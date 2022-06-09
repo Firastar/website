@@ -11,7 +11,7 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <div className={classes.layout}>
-        <div className={classes.greenShadow} />
+        {/* <div className={classes.greenShadow} /> */}
         <Header />
         {children}
         <Footer />

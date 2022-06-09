@@ -4,10 +4,12 @@ import { useTranslation } from "next-i18next";
 import useLockBodyScroll from "../../hooks/useLockBodyScroll";
 import ThemeSwitcher from "../ThemeSwitcher/ThemeSwitcher";
 import Image from "next/image";
-import RightArrow from "../../assets/svgs/RightArrow";
+import RightArrowWithHandle from "../../assets/svgs/RightArrowWithHandle";
 import clsx from "clsx";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import Phone from "../../assets/svgs/Phone";
+import Email from "../../assets/svgs/Email";
 
 interface MenuSideBarProps {
   showMenu: boolean;
@@ -50,7 +52,7 @@ const MenuSideBar = ({ showMenu, setShowMenu, routes }: MenuSideBarProps) => {
             <p>{t("common:MAIN_TITLE")}</p>
           </div>
           <div className={classes.arrow} onClick={() => setShowMenu(false)}>
-            <RightArrow width={16} height={15} />
+            <RightArrowWithHandle />
           </div>
         </div>
         <div className={classes.menuItems}>
@@ -66,6 +68,16 @@ const MenuSideBar = ({ showMenu, setShowMenu, routes }: MenuSideBarProps) => {
               </Link>
             );
           })}
+        </div>
+        <div className={classes.contactInfo}>
+          <div className={classes.phone}>
+            <Phone width={16} height={16} />
+            <p>{t("home:PHONE_NUMBER")}</p>
+          </div>
+          <div className={classes.email}>
+            <Email width={16} height={16} />
+            <p>mohsen.firastar@gmail.com</p>
+          </div>
         </div>
       </div>
     </div>

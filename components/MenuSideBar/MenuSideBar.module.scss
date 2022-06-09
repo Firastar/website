@@ -3,7 +3,8 @@
 }
 
 .menuWrapp {
-	@apply absolute z-100 w-72 h-[100vh] bg-white dark:bg-gray-dark px-5 py-[2.1875rem] overflow-y-auto;
+	@apply absolute z-100 w-72 h-[100vh] bg-white dark:bg-gray-dark pt-[2.1875rem] overflow-y-auto;
+	@apply flex flex-col;
 }
 
 .ltrGrid {
@@ -11,11 +12,11 @@
 }
 
 .menuHeader {
-	@apply flex flex-row rtl:flex-row-reverse items-center mt-[0.4rem];
+	@apply flex flex-row rtl:flex-row-reverse items-center px-5 mt-[0.4rem];
 }
 
 .firastarLogoTitle {
-	@apply flex justify-center items-center flex-1 min-w-[7.5rem] text-primary text-3 font-bold gap-1;
+	@apply flex rtl:flex-row-reverse justify-center items-center flex-1 min-w-[7.5rem] text-primary text-3 font-bold gap-1;
 }
 
 .arrow {
@@ -23,10 +24,19 @@
 }
 
 .menuItems {
-	@apply flex flex-col items-end mt-8 text-black-medium dark:text-white;
-	@apply font-semibold text-4 gap-8;
+	@apply flex flex-col rtl:items-end mt-8 text-black-medium dark:text-white;
+	@apply font-semibold text-4 gap-8 flex-1 px-5;
 }
 
 .activeMenu {
 	@apply text-primary;
+}
+
+.contactInfo {
+	@apply flex flex-col gap-2 border-t border-silver px-5 py-4;
+}
+
+.phone,
+.email {
+	@apply flex rtl:flex-row-reverse gap-2 font-normal text-3.5 text-black-ultra dark:text-white rtl:items-center;
 }

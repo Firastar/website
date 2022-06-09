@@ -16,11 +16,11 @@ const Footer = () => {
     <div className={classes.footer}>
       <div className={classes.contactInfo}>
         <div className={classes.phone}>
-          <Phone width={24} height={24} />
+          <Phone />
           <p>{t("home:PHONE_NUMBER")}</p>
         </div>
         <div className={classes.email}>
-          <Email width={24} height={24} />
+          <Email />
           <p>mohsen.firastar@gmail.com</p>
         </div>
       </div>

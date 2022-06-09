@@ -1,12 +1,12 @@
 import React from "react";
 
 interface EmailProps {
-  width: number;
-  height: number;
+  width?: number;
+  height?: number;
   color?: string;
 }
 
-const Email = ({ width, height, color }: EmailProps) => {
+const Email = ({ width = 24, height = 24, color }: EmailProps) => {
   return (
     <svg
       width={width}
@@ -16,7 +16,8 @@ const Email = ({ width, height, color }: EmailProps) => {
       xmlns="http://www.w3.org/2000/svg">
       <path
         d="M21.3334 4H2.66671C2.31309 4 1.97395 4.14048 1.7239 4.39052C1.47385 4.64057 1.33337 4.97971 1.33337 5.33333V18.6667C1.33337 19.0203 1.47385 19.3594 1.7239 19.6095C1.97395 19.8595 2.31309 20 2.66671 20H21.3334C21.687 20 22.0261 19.8595 22.2762 19.6095C22.5262 19.3594 22.6667 19.0203 22.6667 18.6667V5.33333C22.6667 4.97971 22.5262 4.64057 22.2762 4.39052C22.0261 4.14048 21.687 4 21.3334 4ZM20.3067 18.6667H3.77337L8.44004 13.84L7.48004 12.9133L2.66671 17.8933V6.34667L10.9534 14.5933C11.2032 14.8417 11.5411 14.9811 11.8934 14.9811C12.2456 14.9811 12.5836 14.8417 12.8334 14.5933L21.3334 6.14V17.8067L16.4267 12.9L15.4867 13.84L20.3067 18.6667ZM3.54004 5.33333H20.2534L11.8934 13.6467L3.54004 5.33333Z"
-        fill={color || "#070707"}
+        fill={color}
+        className="fill-black-ultra dark:fill-white"
       />
     </svg>
   );
