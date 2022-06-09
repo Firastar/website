@@ -20,7 +20,7 @@
 }
 
 .arrow {
-	@apply cursor-pointer;
+	@apply cursor-pointer w-[42px] flex justify-end rtl:justify-start;
 }
 
 .menuItems {
