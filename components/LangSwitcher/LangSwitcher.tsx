@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import LangSwitchIcon from "../../assets/svgs/LangSwitchIcon";
-import LangPopup from "../LangPopup/langPopup";
+import LangPopup from "../LangPopup/LangPopup";
 
 const LangSwitcher = () => {
   // close pop up after clicking on body
