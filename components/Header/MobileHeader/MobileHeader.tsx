@@ -1,4 +1,3 @@
-import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import React, { useState } from "react";
 import Image from "next/image";
@@ -16,13 +15,16 @@ interface MobileHeaderProps {
 }
 
 const MobileHeader = ({ routes }: MobileHeaderProps) => {
-  const router = useRouter();
   const { t } = useTranslation();
   const [showMenu, setShowMenu] = useState(false);
 
   return (
     <div className={classes.wrapper}>
-      <MenuSideBar showMenu={showMenu} setShowMenu={setShowMenu} />
+      <MenuSideBar
+        showMenu={showMenu}
+        setShowMenu={setShowMenu}
+        routes={routes}
+      />
       <div className={classes.menu}>
         <HamburgerMenu
           width={24}

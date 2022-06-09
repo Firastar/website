@@ -1,0 +1,16 @@
+.footer {
+	@apply flex justify-between items-center px-5 py-9 border-t border-silver;
+}
+
+.contactInfo {
+	@apply flex flex-col gap-2;
+}
+
+.phone,
+.email {
+	@apply flex gap-2 text-black-ultra font-normal text-4.5;
+}
+
+.socialMedia {
+	@apply flex flex-row-reverse gap-5;
+}

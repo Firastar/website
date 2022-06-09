@@ -21,3 +21,12 @@
 .arrow {
 	@apply cursor-pointer;
 }
+
+.menuItems {
+	@apply flex flex-col items-end mt-8 text-black-medium dark:text-white;
+	@apply font-semibold text-4 gap-8;
+}
+
+.activeMenu {
+	@apply text-primary;
+}

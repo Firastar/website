@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import classes from "./Layout.module.scss";
 
@@ -13,6 +14,7 @@ const Layout = ({ children }: LayoutProps) => {
         <div className={classes.greenShadow} />
         <Header />
         {children}
+        <Footer />
       </div>
     </>
   );

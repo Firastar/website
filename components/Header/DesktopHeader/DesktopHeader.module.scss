@@ -8,7 +8,7 @@
 
 .menu {
 	@apply flex justify-center items-center flex-1 text-black-medium dark:text-white;
-	@apply font-normal whitespace-nowrap text-4.5 xl:text-5 gap-8 xl:gap-12;
+	@apply font-semibold whitespace-nowrap text-4.5 xl:text-5 gap-8 xl:gap-12;
 }
 
 .switchers {

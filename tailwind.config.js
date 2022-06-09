@@ -27,7 +27,7 @@ module.exports = {
       "black-light": "#727272",
       white: "#f9f9f9",
       "gray-dark": "#242526",
-      "gray-light": "#E5E5E5",
+      silver: "#D7D7D7",
     },
     extend: {
       fontSize: {

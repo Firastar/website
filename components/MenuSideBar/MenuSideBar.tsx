@@ -6,13 +6,21 @@ import ThemeSwitcher from "../ThemeSwitcher/ThemeSwitcher";
 import Image from "next/image";
 import RightArrow from "../../assets/svgs/RightArrow";
 import clsx from "clsx";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
 interface MenuSideBarProps {
   showMenu: boolean;
   setShowMenu: (arg0: boolean) => void;
+  routes: {
+    id: number;
+    title: string;
+    path: string;
+  }[];
 }
 
-const MenuSideBar = ({ showMenu, setShowMenu }: MenuSideBarProps) => {
+const MenuSideBar = ({ showMenu, setShowMenu, routes }: MenuSideBarProps) => {
+  const router = useRouter();
   const { t } = useTranslation();
   const sideBarRef = useRef<HTMLDivElement>(null);
 
@@ -44,6 +52,20 @@ const MenuSideBar = ({ showMenu, setShowMenu }: MenuSideBarProps) => {
           <div className={classes.arrow} onClick={() => setShowMenu(false)}>
             <RightArrow width={16} height={15} />
           </div>
+        </div>
+        <div className={classes.menuItems}>
+          {routes.map(route => {
+            return (
+              <Link href={route.path} key={route.id}>
+                <a
+                  className={
+                    router.pathname === route.path ? classes.activeMenu : ""
+                  }>
+                  {route.title}
+                </a>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </div>
