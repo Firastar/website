@@ -1,8 +1,7 @@
 {
-  "item-one": "Home",
-  "item-two": "Features",
-  "item-three": "Online Editing",
-  "item-four": "Source Code",
-  "item-five": "About Us",
-  "item-six": "Contact Us"
+  "HOME": "Home",
+  "FEATURES": "Features",
+  "ONLINE_EDITING": "Online Editing",
+  "ABOUT_US": "About Us",
+  "CONTACT_US": "Contact Us"
 }

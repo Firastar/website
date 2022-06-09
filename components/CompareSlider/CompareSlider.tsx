@@ -14,7 +14,7 @@ const CompareSlider = () => {
 
   return (
     <>
-      <p className={classes.compareSliderTitle}>{t("home:slider-title")}</p>
+      <p className={classes.compareSliderTitle}>{t("home:SLIDER_TITLE")}</p>
       <div className={classes.desktopCompareSlider}>
         <ReactCompareSlider
           handle={

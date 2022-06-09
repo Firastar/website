@@ -23,7 +23,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider attribute="class">
       <Head>
-        <title>{t("common:main-title")}</title>
+        <title>{t("common:MAIN_TITLE")}</title>
       </Head>
       <Layout>
         <Component {...pageProps} />

@@ -34,7 +34,7 @@ const MobileHeader = ({ routes }: MobileHeaderProps) => {
       </div>
       <div className={classes.firastarLogoTitle}>
         <Image src="/icons/logo.png" alt="logo" width={40} height={40} />
-        <p>{t("common:main-title")}</p>
+        <p>{t("common:MAIN_TITLE")}</p>
       </div>
       <div className={classes.switchers}>
         <LangSwitcher />

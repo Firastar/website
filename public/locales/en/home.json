@@ -1,6 +1,5 @@
 {
-  "test": "This is a Firaster",
-  "slider-title": "Before and after using Firastar",
+  "SLIDER_TITLE": "Before and after using Firastar",
   "PERSIAN_LANG": "Persian",
   "ENGLISH_LANG": "English"
 }

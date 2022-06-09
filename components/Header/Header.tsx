@@ -1,8 +1,7 @@
 import { useTranslation } from "next-i18next";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo } from "react";
 import DesktopHeader from "./DesktopHeader/DesktopHeader";
 import MobileHeader from "./MobileHeader/MobileHeader";
-import { useTheme } from "next-themes";
 
 const Header = () => {
   const { t } = useTranslation();
@@ -11,33 +10,28 @@ const Header = () => {
     () => [
       {
         id: 1,
-        title: t("menu-items:item-one"),
+        title: t("menu-items:HOME"),
         path: "/",
       },
       {
         id: 2,
-        title: t("menu-items:item-two"),
+        title: t("menu-items:FEATURES"),
         path: "/features",
       },
       {
         id: 3,
-        title: t("menu-items:item-three"),
+        title: t("menu-items:ONLINE_EDITING"),
         path: "/sample",
       },
       {
         id: 4,
-        title: t("menu-items:item-four"),
+        title: t("menu-items:ABOUT_US"),
         path: "/source-code",
       },
       {
         id: 5,
-        title: t("menu-items:item-five"),
+        title: t("menu-items:CONTACT_US"),
         path: "/about-us",
-      },
-      {
-        id: 6,
-        title: t("menu-items:item-six"),
-        path: "/contact-us",
       },
     ],
     [t]

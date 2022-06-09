@@ -1,8 +1,7 @@
 {
-  "item-one": "خانه",
-  "item-two": "قابلیت‌ها",
-  "item-three": "ویرایش آنلاین",
-  "item-four": "سورس پروژه",
-  "item-five": "درباره ما",
-  "item-six": "تماس با ما"
+  "HOME": "خانه",
+  "FEATURES": "قابلیت‌ها",
+  "ONLINE_EDITING": "ویرایش آنلاین",
+  "ABOUT_US": "درباره ما",
+  "CONTACT_US": "تماس با ما"
 }

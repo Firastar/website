@@ -6,7 +6,6 @@ import ThemeSwitcher from "../ThemeSwitcher/ThemeSwitcher";
 import Image from "next/image";
 import RightArrow from "../../assets/svgs/RightArrow";
 import clsx from "clsx";
-import "animate.css";
 
 interface MenuSideBarProps {
   showMenu: boolean;
@@ -40,7 +39,7 @@ const MenuSideBar = ({ showMenu, setShowMenu }: MenuSideBarProps) => {
           <ThemeSwitcher mobileMode={true} />
           <div className={classes.firastarLogoTitle}>
             <Image src="/icons/logo.png" alt="logo" width={28} height={28} />
-            <p>{t("common:main-title")}</p>
+            <p>{t("common:MAIN_TITLE")}</p>
           </div>
           <div className={classes.arrow} onClick={() => setShowMenu(false)}>
             <RightArrow width={16} height={15} />
