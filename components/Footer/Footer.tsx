@@ -21,7 +21,7 @@ const Footer = () => {
         </div>
         <div className={classes.email}>
           <Email width={24} height={24} />
-          <p>mohsen.firastar@gmail.com6666</p>
+          <p>mohsen.firastar@gmail.com</p>
         </div>
       </div>
       <div className={classes.socialMedia}>
