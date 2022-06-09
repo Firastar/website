@@ -1,5 +1,7 @@
 .popupWrap {
-	@apply w-[93px] border border-black-light rounded-lg absolute top-8 left-5 flex flex-col p-2 gap-2;
+	@apply w-[93px] border border-black-light rounded-lg absolute bg-white dark:bg-gray-dark;
+	@apply top-8 -left-[4.2rem] rtl:left-5 flex flex-col gap-2;
+	@apply pt-[0.6rem] pb-[0.4rem] pl-[0.7rem] pr-[0.3rem] rtl:p-2;
 }
 
 .redioWrap {
