@@ -39,7 +39,7 @@ import LangPopup from "../LangPopup/LangPopup";
 const LangSwitcher = () => {
   const [popupDisplayConfig, setPopupDisplayConfig] = useState({
     visibility: false,
-    animate: "fadeIn",
+    animate: "",
   });
 
   const closePopup = useCallback(() => {
@@ -56,13 +56,14 @@ const LangSwitcher = () => {
       if (
         !langSwitcherRef.current?.contains(e.target as HTMLElement) &&
         popupDisplayConfig.visibility &&
-        popupDisplayConfig.animate === "fadeIn"
+        popupDisplayConfig.animate === ""
       ) {
+        console.log(popupDisplayConfig);
         closePopup();
       }
     };
-    document.body.addEventListener("click", onClickBody, true);
-    // return () => document.body.removeEventListener("click", onClickBody);
+    document.addEventListener("click", onClickBody, true);
+    return () => document.removeEventListener("click", onClickBody, true);
   }, [closePopup, popupDisplayConfig]);
 
   return (

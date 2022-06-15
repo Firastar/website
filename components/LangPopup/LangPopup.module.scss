@@ -2,6 +2,8 @@
 	@apply w-[120px] h-20 border border-black-light rounded-lg absolute;
 	@apply bg-white dark:bg-gray-dark top-8 -left-24 rtl:left-5;
 	@apply flex flex-col gap-4 py-3 pl-[0.75rem] pr-[0.3rem] rtl:p-3;
+
+	--animate-duration: 500ms;
 }
 
 .radioWrap {
@@ -12,7 +14,7 @@
 	@apply appearance-none h-[11px] w-[11px] border border-black-light rounded-full bg-white relative;
 	@apply ltr:bottom-0.5 checked:border-none dark:bg-gray-dark focus:outline-none transition duration-200;
 	@apply cursor-pointer checked:after:content-["\25C9"] checked:after:text-primary checked:after:absolute;
-	@apply checked:after:top-[-0.25rem] checked:after:right-[-0.08rem] ;
+	@apply checked:after:top-[-0.25rem] checked:after:right-[-0.08rem];
 	@apply checked:after:mx-auto checked:after:rounded-full;
 }
 

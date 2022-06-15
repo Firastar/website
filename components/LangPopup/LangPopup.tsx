@@ -82,8 +82,7 @@
 // };
 
 // export default LangPopup;
-
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import classes from "./LangPopup.module.scss";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
@@ -113,14 +112,23 @@ const LangPopup = ({
     <div
       className={clsx(
         classes.popupWrap,
-        `animate__animated animate__${
+        `animate__animated ${
           popupDisplayConfig.animate
+            ? "animate__" + popupDisplayConfig.animate
+            : ""
         } animate__faster ${popupDisplayConfig.visibility ? "flex" : "!hidden"}`
       )}
       ref={popupRef}
       onAnimationEnd={() => {
-        popupDisplayConfig.animate === "fadeOut" &&
-          setPopupDisplayConfig({ ...popupDisplayConfig, visibility: false });
+        popupDisplayConfig.animate === "fadeOut"
+          ? setPopupDisplayConfig({
+              animate: "",
+              visibility: false,
+            })
+          : setPopupDisplayConfig({
+              animate: "",
+              visibility: true,
+            });
       }}>
       <div
         className={classes.radioWrap}
