@@ -1,6 +1,6 @@
 .wrapper {
 	@apply flex lg:hidden items-center sticky z-100 top-0 -mt-[6.875rem] -mx-[2.1875rem];
-	@apply px-[2.1875rem] py-[2.1875rem] right-0 left-0 bg-white dark:bg-gray-dark;
+	@apply px-[2.1875rem] py-[1.5rem] right-0 left-0 bg-white dark:bg-gray-dark shadow-md;
 }
 
 .firastarLogoTitle {

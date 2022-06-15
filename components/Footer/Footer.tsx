@@ -3,6 +3,7 @@ import classes from "./Footer.module.scss";
 import { useTranslation } from "next-i18next";
 import Phone from "../../assets/svgs/Phone";
 import Email from "../../assets/svgs/Email";
+import UkraineFlag from "../../assets/svgs/UkraineFlag";
 import Link from "next/link";
 import Discord from "../../assets/svgs/Discord";
 import Github from "../../assets/svgs/Github";
@@ -23,6 +24,10 @@ const Footer = () => {
           <Email />
           <p>mohsen.firastar@gmail.com</p>
         </div>
+      </div>
+      <div className={classes.statement}>
+        <UkraineFlag width={24} height={20} />
+        {t("home:STATEMENT")}
       </div>
       <div className={classes.socialMedia}>
         <Link href="/">

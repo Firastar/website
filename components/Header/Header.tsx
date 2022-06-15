@@ -5,7 +5,6 @@ import MobileHeader from "./MobileHeader/MobileHeader";
 
 const Header = () => {
   const { t } = useTranslation();
-
   const routes = useMemo(
     () => [
       {

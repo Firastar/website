@@ -1,5 +1,6 @@
 .footer {
-	@apply flex justify-center lg:justify-between items-center px-5 py-5 lg:py-9 border-t border-silver;
+	@apply flex justify-center lg:justify-between items-center px-5 py-5;
+	@apply lg:py-9 border-t border-silver mt-20;
 }
 
 .contactInfo {
@@ -9,6 +10,10 @@
 .phone,
 .email {
 	@apply flex items-center gap-2 font-normal text-4.5 text-black-ultra dark:text-white;
+}
+
+.statement {
+	@apply hidden lg:flex gap-2 items-start rtl:items-center;
 }
 
 .socialMedia {

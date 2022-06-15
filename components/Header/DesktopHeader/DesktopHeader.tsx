@@ -1,11 +1,11 @@
+import React from "react";
+import classes from "./DesktopHeader.module.scss";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import ThemeSwitcher from "../../ThemeSwitcher/ThemeSwitcher";
 import LangSwitcher from "../../LangSwitcher/LangSwitcher";
-import classes from "./DesktopHeader.module.scss";
+import ThemeSwitcher from "../../ThemeSwitcher/ThemeSwitcher";
 
 interface DesktopHeaderProps {
   routes: {

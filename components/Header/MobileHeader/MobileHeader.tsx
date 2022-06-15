@@ -1,10 +1,10 @@
-import { useTranslation } from "next-i18next";
 import React, { useState } from "react";
-import Image from "next/image";
-import LangSwitcher from "../../LangSwitcher/LangSwitcher";
+import { useTranslation } from "next-i18next";
 import classes from "./MobileHeader.module.scss";
 import HamburgerMenu from "../../../assets/svgs/HamburgerMenu";
 import MenuSideBar from "../../MenuSideBar/MenuSideBar";
+import Image from "next/image";
+import LangSwitcher from "../../LangSwitcher/LangSwitcher";
 
 interface MobileHeaderProps {
   routes: {
