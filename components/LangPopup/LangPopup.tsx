@@ -60,6 +60,7 @@ const LangPopup = ({
       <div
         className={classes.radioWrap}
         onClick={() => {
+          router.push(router.pathname, router.pathname, { locale: "fa" });
           closePopup();
         }}>
         <input
@@ -80,6 +81,7 @@ const LangPopup = ({
       <div
         className={classes.radioWrap}
         onClick={() => {
+          router.push(router.pathname, router.pathname, { locale: "en" });
           closePopup();
         }}>
         <input

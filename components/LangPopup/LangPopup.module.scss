@@ -1,23 +1,23 @@
 .popupWrap {
-	@apply w-[120px] h-20 border border-black-light rounded-lg absolute;
-	@apply bg-white dark:bg-gray-dark top-8 -left-24 rtl:left-5;
-	@apply flex flex-col gap-4 py-3 pl-[0.75rem] pr-[0.3rem] rtl:p-3;
+	@apply w-36 h-24 border border-black-light rounded-lg absolute;
+	@apply bg-white dark:bg-gray-dark top-8 -left-[7.5rem] rtl:left-5;
+	@apply flex flex-col justify-center gap-4 pt-3.5 pb-2.5 px-4 rtl:p-4;
 
 	--animate-duration: 500ms;
 }
 
 .radioWrap {
-	@apply flex justify-center items-center gap-2;
+	@apply flex justify-center items-center gap-2 h-full cursor-pointer;
 }
 
 .radioButton {
-	@apply appearance-none h-[11px] w-[11px] border border-black-light rounded-full bg-white relative;
+	@apply appearance-none h-[13px] w-[13px] border border-black-light rounded-full bg-white relative;
 	@apply ltr:bottom-0.5 checked:border-none dark:bg-gray-dark focus:outline-none transition duration-200;
 	@apply cursor-pointer checked:after:content-["\25C9"] checked:after:text-primary checked:after:absolute;
-	@apply checked:after:top-[-0.25rem] checked:after:right-[-0.08rem];
+	@apply checked:after:top-[-0.25rem] checked:after:right-[-0.08rem] checked:after:text-4.5;
 	@apply checked:after:mx-auto checked:after:rounded-full;
 }
 
 .label {
-	@apply text-3.5 font-normal flex-1 cursor-pointer;
+	@apply text-4 font-normal flex-1 cursor-pointer;
 }
