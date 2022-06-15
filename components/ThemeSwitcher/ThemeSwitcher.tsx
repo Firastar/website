@@ -1,10 +1,9 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { useTheme } from "next-themes";
 import Toggle from "react-toggle";
 import "react-toggle/style.css";
 import Sun from "../../assets/svgs/Sun";
 import Moon from "../../assets/svgs/Moon";
-import { useTheme } from "next-themes";
 
 export interface ThemeSwitcherProps {
   mobileMode?: boolean;
