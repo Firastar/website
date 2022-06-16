@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import { ThemeProvider } from "next-themes";
 import Head from "next/head";
 import { Layout } from "@layout";
+import NextNProgress from "nextjs-progressbar";
 import { appWithTranslation } from "next-i18next";
 import { GetStaticProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -26,6 +27,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <title>{t("common:MAIN_TITLE")}</title>
       </Head>
       <Layout>
+        <NextNProgress height={2} color="#15C39A" />
         <Component {...pageProps} />
       </Layout>
     </ThemeProvider>
