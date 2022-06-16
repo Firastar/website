@@ -5,7 +5,7 @@ import {
   ReactCompareSlider,
   ReactCompareSliderImage,
 } from "react-compare-slider";
-import LeftAngle from "../../assets/svgs/leftAngle";
+import LeftAngle from "../../assets/svgs/LeftAngle";
 import RightAngle from "../../assets/svgs/RightAngle";
 
 const CompareSlider = () => {
