@@ -1,0 +1,9 @@
+export { default as CompareSlider } from "./CompareSlider/CompareSlider";
+export { default as Footer } from "./Footer/Footer";
+export { default as Header } from "./Header/Header";
+export { default as DesktopHeader } from "./Header/DesktopHeader/DesktopHeader";
+export { default as MobileHeader } from "./Header/MobileHeader/MobileHeader";
+export { default as LangPopup } from "./LangPopup/LangPopup";
+export { default as LangSwitcher } from "./LangSwitcher/LangSwitcher";
+export { default as MenuSideBar } from "./MenuSideBar/MenuSideBar";
+export { default as ThemeSwitcher } from "./ThemeSwitcher/ThemeSwitcher";

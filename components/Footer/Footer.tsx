@@ -1,14 +1,16 @@
 import React from "react";
 import classes from "./Footer.module.scss";
 import { useTranslation } from "next-i18next";
-import Phone from "../../assets/svgs/Phone";
-import Email from "../../assets/svgs/Email";
-import UkraineFlag from "../../assets/svgs/UkraineFlag";
 import Link from "next/link";
-import Discord from "../../assets/svgs/Discord";
-import Github from "../../assets/svgs/Github";
-import Instagram from "../../assets/svgs/Instagram";
-import Linkedin from "../../assets/svgs/Linkedin";
+import {
+  Phone,
+  Email,
+  UkraineFlag,
+  Discord,
+  Github,
+  Instagram,
+  Linkedin,
+} from "@svgs";
 
 const Footer = () => {
   const { t } = useTranslation();

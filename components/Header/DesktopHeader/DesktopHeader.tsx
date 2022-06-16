@@ -5,8 +5,7 @@ import { useTranslation } from "next-i18next";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import Image from "next/image";
 import Link from "next/link";
-import LangSwitcher from "../../LangSwitcher/LangSwitcher";
-import ThemeSwitcher from "../../ThemeSwitcher/ThemeSwitcher";
+import { LangSwitcher, ThemeSwitcher } from "@components";
 import clsx from "clsx";
 
 interface DesktopHeaderProps {

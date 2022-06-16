@@ -1,0 +1,14 @@
+export { default as Discord } from "./Discord";
+export { default as Email } from "./Email";
+export { default as Github } from "./Github";
+export { default as HamburgerMenu } from "./HamburgerMenu";
+export { default as Instagram } from "./Instagram";
+export { default as LangSwitchIcon } from "./LangSwitchIcon";
+export { default as LeftAngle } from "./LeftAngle";
+export { default as Linkedin } from "./Linkedin";
+export { default as Moon } from "./Moon";
+export { default as Phone } from "./Phone";
+export { default as RightAngle } from "./RightAngle";
+export { default as RightArrow } from "./RightArrow";
+export { default as Sun } from "./Sun";
+export { default as UkraineFlag } from "./UkraineFlag";

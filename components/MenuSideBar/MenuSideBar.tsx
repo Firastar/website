@@ -1,15 +1,13 @@
 import React, { useRef } from "react";
 import classes from "./MenuSideBar.module.scss";
-import { useTranslation } from "next-i18next";
-import useLockBodyScroll from "../../hooks/useLockBodyScroll";
-import ThemeSwitcher from "../ThemeSwitcher/ThemeSwitcher";
-import Image from "next/image";
-import RightArrow from "../../assets/svgs/RightArrow";
-import clsx from "clsx";
 import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
+import { useLockBodyScroll } from "@hooks";
+import clsx from "clsx";
+import { ThemeSwitcher } from "@components";
+import Image from "next/image";
+import { RightArrow, Phone, Email } from "@svgs";
 import Link from "next/link";
-import Phone from "../../assets/svgs/Phone";
-import Email from "../../assets/svgs/Email";
 
 interface MenuSideBarProps {
   showMenu: boolean;

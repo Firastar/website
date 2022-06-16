@@ -1,5 +1,5 @@
 // calculate body's scrollbar width in px
-export function getScrollBarWidth() {
+export default function getScrollBarWidth() {
   const inner = document.createElement("p");
   inner.style.width = "100%";
   inner.style.height = "200px";

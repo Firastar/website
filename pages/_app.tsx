@@ -1,14 +1,14 @@
+import React, { useEffect, useMemo } from "react";
 import "../styles/globals.scss";
 import type { AppProps } from "next/app";
+import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
-import { useEffect, useMemo } from "react";
 import { ThemeProvider } from "next-themes";
 import Head from "next/head";
-import Layout from "../layouts/Layout";
+import { Layout } from "@layout";
 import { appWithTranslation } from "next-i18next";
 import { GetStaticProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useTranslation } from "next-i18next";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const { t } = useTranslation();

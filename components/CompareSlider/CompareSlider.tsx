@@ -1,3 +1,4 @@
+import React from "react";
 import classes from "./CompareSlider.module.scss";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
@@ -5,8 +6,7 @@ import {
   ReactCompareSlider,
   ReactCompareSliderImage,
 } from "react-compare-slider";
-import LeftAngle from "../../assets/svgs/LeftAngle";
-import RightAngle from "../../assets/svgs/RightAngle";
+import { LeftAngle, RightAngle } from "@svgs";
 
 const CompareSlider = () => {
   const { locale } = useRouter();

@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
+import { CompareSlider } from "@components";
 import { GetStaticProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import CompareSlider from "../components/CompareSlider/CompareSlider";
 
 const Home: NextPage = () => {
   return <CompareSlider />;

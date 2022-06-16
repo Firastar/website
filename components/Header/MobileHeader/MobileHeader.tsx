@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import classes from "./MobileHeader.module.scss";
 import { useTranslation } from "next-i18next";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
-import HamburgerMenu from "../../../assets/svgs/HamburgerMenu";
-import MenuSideBar from "../../MenuSideBar/MenuSideBar";
+import { HamburgerMenu } from "@svgs";
+import { MenuSideBar, LangSwitcher } from "@components";
 import Image from "next/image";
-import LangSwitcher from "../../LangSwitcher/LangSwitcher";
 import clsx from "clsx";
 
 interface MobileHeaderProps {

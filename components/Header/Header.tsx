@@ -1,7 +1,6 @@
 import { useTranslation } from "next-i18next";
 import { useMemo } from "react";
-import DesktopHeader from "./DesktopHeader/DesktopHeader";
-import MobileHeader from "./MobileHeader/MobileHeader";
+import { DesktopHeader, MobileHeader } from "@components";
 
 const Header = () => {
   const { t } = useTranslation();

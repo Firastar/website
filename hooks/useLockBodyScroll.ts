@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect } from "react";
-import { getScrollBarWidth } from "../helpers/getScrollBarWidth";
+import { getScrollBarWidth } from "@helpers";
 
 export default function useLockBodyScroll(open: boolean) {
   // to handle hydrate error due to using useLayoutEffect hook in useLockBodyScroll
