@@ -15,6 +15,7 @@
     "stylelint:fix": "stylelint \"**/*.scss\" --fix"
   },
   "dependencies": {
+    "@n8tb1t/use-scroll-position": "^2.0.3",
     "@sentry/nextjs": "^6.19.7",
     "animate.css": "^4.1.1",
     "clsx": "^1.1.1",

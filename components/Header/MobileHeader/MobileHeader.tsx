@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { useTranslation } from "next-i18next";
 import classes from "./MobileHeader.module.scss";
+import { useTranslation } from "next-i18next";
+import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import HamburgerMenu from "../../../assets/svgs/HamburgerMenu";
 import MenuSideBar from "../../MenuSideBar/MenuSideBar";
 import Image from "next/image";
 import LangSwitcher from "../../LangSwitcher/LangSwitcher";
+import clsx from "clsx";
 
 interface MobileHeaderProps {
   routes: {
@@ -18,8 +20,14 @@ const MobileHeader = ({ routes }: MobileHeaderProps) => {
   const { t } = useTranslation();
   const [showMenu, setShowMenu] = useState(false);
 
+  // to display shadow when home page is scrolled
+  const [displayShadow, setDisplayShadow] = useState(false);
+  useScrollPosition(({ currPos }) => {
+    setDisplayShadow(currPos.y < 0);
+  });
+
   return (
-    <div className={classes.wrapper}>
+    <div className={clsx(classes.wrapper, displayShadow && "shadow-md")}>
       <MenuSideBar
         showMenu={showMenu}
         setShowMenu={setShowMenu}

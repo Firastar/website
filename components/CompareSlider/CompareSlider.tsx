@@ -5,8 +5,8 @@ import {
   ReactCompareSlider,
   ReactCompareSliderImage,
 } from "react-compare-slider";
-import LeftArrow from "../../assets/svgs/LeftArrow";
-import RightArrow from "../../assets/svgs/RightArrow";
+import LeftAngle from "../../assets/svgs/leftAngle";
+import RightAngle from "../../assets/svgs/RightAngle";
 
 const CompareSlider = () => {
   const { locale } = useRouter();
@@ -20,8 +20,8 @@ const CompareSlider = () => {
           handle={
             <div className={classes.handle}>
               <div className={classes.arrowWrap}>
-                <LeftArrow width={14} height={28} color="white" />
-                <RightArrow width={14} height={28} color="white" />
+                <LeftAngle width={14} height={28} color="white" />
+                <RightAngle width={14} height={28} color="white" />
               </div>
             </div>
           }
@@ -55,8 +55,8 @@ const CompareSlider = () => {
           handle={
             <div className={classes.handle}>
               <div className={classes.arrowWrap}>
-                <LeftArrow width={14} height={28} color="white" />
-                <RightArrow width={14} height={28} color="white" />
+                <LeftAngle width={14} height={28} color="white" />
+                <RightAngle width={14} height={28} color="white" />
               </div>
             </div>
           }

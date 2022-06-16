@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "./DesktopHeader.module.scss";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
+import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import Image from "next/image";
 import Link from "next/link";
 import LangSwitcher from "../../LangSwitcher/LangSwitcher";
 import ThemeSwitcher from "../../ThemeSwitcher/ThemeSwitcher";
+import clsx from "clsx";
 
 interface DesktopHeaderProps {
   routes: {
@@ -19,8 +21,14 @@ const DesktopHeader = ({ routes }: DesktopHeaderProps) => {
   const router = useRouter();
   const { t } = useTranslation();
 
+  // to display shadow when home page is scrolled
+  const [displayShadow, setDisplayShadow] = useState(false);
+  useScrollPosition(({ currPos }) => {
+    setDisplayShadow(currPos.y < 0);
+  });
+
   return (
-    <div className={classes.wrapper}>
+    <div className={clsx(classes.wrapper, displayShadow && "shadow-md")}>
       <div className={classes.firastarLogoTitle}>
         <Image src="/icons/logo.png" alt="logo" width={48} height={48} />
         <p>{t("common:MAIN_TITLE")}</p>

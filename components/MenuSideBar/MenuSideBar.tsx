@@ -4,7 +4,7 @@ import { useTranslation } from "next-i18next";
 import useLockBodyScroll from "../../hooks/useLockBodyScroll";
 import ThemeSwitcher from "../ThemeSwitcher/ThemeSwitcher";
 import Image from "next/image";
-import RightArrowWithHandle from "../../assets/svgs/RightArrowWithHandle";
+import RightArrow from "../../assets/svgs/RightArrow";
 import clsx from "clsx";
 import { useRouter } from "next/router";
 import Link from "next/link";
@@ -27,6 +27,13 @@ const MenuSideBar = ({ showMenu, setShowMenu, routes }: MenuSideBarProps) => {
   const sideBarRef = useRef<HTMLDivElement>(null);
 
   useLockBodyScroll(showMenu);
+
+  const sideBarHeight = () =>
+    sideBarRef.current?.style.setProperty(
+      "min-height",
+      `${window.innerHeight}px`
+    );
+  sideBarHeight();
 
   return (
     <div
@@ -52,7 +59,7 @@ const MenuSideBar = ({ showMenu, setShowMenu, routes }: MenuSideBarProps) => {
             <p>{t("common:MAIN_TITLE")}</p>
           </div>
           <div className={classes.arrow} onClick={() => setShowMenu(false)}>
-            <RightArrowWithHandle />
+            <RightArrow />
           </div>
         </div>
         <div className={classes.menuItems}>

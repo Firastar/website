@@ -3,7 +3,7 @@
 }
 
 .menuWrapp {
-	@apply absolute z-100 w-72 h-[100vh] bg-white dark:bg-gray-dark pt-[2.1875rem] overflow-y-auto;
+	@apply absolute z-100 w-72 bg-white dark:bg-gray-dark pt-4 overflow-y-auto;
 	@apply flex flex-col;
 }
 

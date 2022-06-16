@@ -1,12 +1,12 @@
 import React from "react";
 
-interface LeftArrowProps {
+interface RightAngleProps {
   width: number;
   height: number;
-  color: string;
+  color?: string;
 }
 
-const LeftArrow = ({ width, height, color }: LeftArrowProps) => {
+const RightAngle = ({ width, height, color }: RightAngleProps) => {
   return (
     <svg
       version="1.1"
@@ -18,13 +18,13 @@ const LeftArrow = ({ width, height, color }: LeftArrowProps) => {
       width={width}
       fill={color}
       height={height}
-      viewBox="0 0 30.725 30.725"
-      //   style="enable-background:new 0 0 30.725 30.725;"
+      viewBox="0 0 30.729 30.729"
       xmlSpace="preserve">
       <g>
         <path
-          d="M24.078,26.457c0.977,0.978,0.977,2.559,0,3.536c-0.488,0.488-1.128,0.731-1.77,0.731c-0.639,0-1.278-0.243-1.768-0.731
-		L5.914,15.362l14.629-14.63c0.977-0.977,2.559-0.976,3.535,0c0.977,0.977,0.977,2.56,0,3.536L12.984,15.362L24.078,26.457z"
+          d="M24.813,15.366L10.185,29.997c-0.487,0.487-1.128,0.731-1.768,0.731c-0.641,0-1.279-0.244-1.769-0.731
+	   c-0.977-0.978-0.977-2.561,0-3.536l11.095-11.096L6.649,4.268c-0.976-0.977-0.976-2.56,0-3.536c0.977-0.977,2.56-0.976,3.536,0
+	   L24.813,15.366z"
         />
       </g>
       <g></g>
@@ -46,4 +46,4 @@ const LeftArrow = ({ width, height, color }: LeftArrowProps) => {
   );
 };
 
-export default LeftArrow;
+export default RightAngle;
