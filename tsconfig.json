@@ -17,10 +17,15 @@
     "baseUrl": "./",
     "paths": {
       "@svgs/*": ["assets/svgs/*"],
+      "@svgs": ["assets/svgs"],
       "@components/*": ["components/*"],
+      "@components": ["components"],
       "@helpers/*": ["helpers/*"],
+      "@helpers": ["helpers"],
       "@hooks/*": ["hooks/*"],
-      "@layout/*": ["layout/*"]
+      "@hooks": ["hooks"],
+      "@layout/*": ["layout/*"],
+      "@layout": ["layout"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
