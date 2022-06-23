@@ -32,14 +32,14 @@ html.dark {
 }
 
 body {
-	padding: 0;
 	margin: 7.375rem 4.375rem 0;
+	padding: 0;
 }
 
 @media only screen and (max-width: 1024px) {
 	body {
-		padding: 0;
 		margin: 6.875rem 2.1875rem 0;
+		padding: 0;
 	}
 }
 
@@ -50,6 +50,7 @@ a {
 
 * {
 	box-sizing: border-box;
+	transition: color, background-color 0.5s;
 }
 
 // override react toggle styles

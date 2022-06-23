@@ -13,15 +13,17 @@ export default function useLockBodyScroll(open: boolean) {
       paddingRight: window.getComputedStyle(document.body).paddingRight,
     };
 
-    // const hasVScroll = window.innerWidth > document.body.clientWidth;
-    const hasVScroll = document.body.scrollHeight > document.body.clientWidth;
+    const hasVScroll = window.innerWidth > document.body.clientWidth;
+    // const hasVScroll = document.body.scrollHeight > document.body.clientWidth;
 
     const scrollBarWidth = getScrollBarWidth();
 
     // prevent scrolling on mount
     if (open) {
       document.body.style.overflow = "hidden";
-      if (hasVScroll) document.body.style.paddingRight = scrollBarWidth + "px";
+      if (hasVScroll)
+        document.body.style.paddingRight =
+          parseInt(originalStyle.paddingRight) + scrollBarWidth + "px";
     }
 
     // re-enable scrolling when component unmounts
@@ -29,5 +31,5 @@ export default function useLockBodyScroll(open: boolean) {
       document.body.style.overflow = originalStyle.overflow;
       document.body.style.paddingRight = originalStyle.paddingRight;
     };
-  }, [open]); // empty array ensures effect is only run on mount and unmount
+  }, []); // empty array ensures effect is only run on mount and unmount
 }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import classes from "./MobileHeader.module.scss";
+import classes from "./MobileNavBar.module.scss";
 import { useTranslation } from "next-i18next";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import { HamburgerMenu } from "@svgs";
@@ -7,7 +7,7 @@ import { MenuSideBar, LangSwitcher } from "@components";
 import Image from "next/image";
 import clsx from "clsx";
 
-interface MobileHeaderProps {
+interface MobileNavBarProps {
   routes: {
     id: number;
     title: string;
@@ -15,7 +15,7 @@ interface MobileHeaderProps {
   }[];
 }
 
-const MobileHeader = ({ routes }: MobileHeaderProps) => {
+const MobileNavBar = ({ routes }: MobileNavBarProps) => {
   const { t } = useTranslation();
   const [showMenu, setShowMenu] = useState(false);
 
@@ -52,4 +52,4 @@ const MobileHeader = ({ routes }: MobileHeaderProps) => {
   );
 };
 
-export default MobileHeader;
+export default MobileNavBar;

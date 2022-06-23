@@ -6,8 +6,9 @@ import { useLockBodyScroll } from "@hooks";
 import clsx from "clsx";
 import { ThemeSwitcher } from "@components";
 import Image from "next/image";
-import { RightArrow, Phone, Email } from "@svgs";
+import { RightArrow, Phone, Email, LeftArrow } from "@svgs";
 import Link from "next/link";
+import "animate.css";
 
 interface MenuSideBarProps {
   showMenu: boolean;
@@ -33,9 +34,15 @@ const MenuSideBar = ({ showMenu, setShowMenu, routes }: MenuSideBarProps) => {
     );
   sideBarHeight();
 
+  const overlayRef = useRef<HTMLDivElement>(null);
+
   return (
     <div
       className={clsx(classes.overlay, showMenu ? "visible" : "invisible")}
+      ref={overlayRef}
+      onAnimationEnd={() =>
+        overlayRef.current?.setAttribute("style", "visibility:hidden")
+      }
       onClick={e => {
         !sideBarRef.current?.contains(e.target as HTMLElement)
           ? setShowMenu(false)
@@ -57,7 +64,7 @@ const MenuSideBar = ({ showMenu, setShowMenu, routes }: MenuSideBarProps) => {
             <p>{t("common:MAIN_TITLE")}</p>
           </div>
           <div className={classes.arrow} onClick={() => setShowMenu(false)}>
-            <RightArrow />
+            {router.locale === "fa" ? <RightArrow /> : <LeftArrow />}
           </div>
         </div>
         <div className={classes.menuItems}>

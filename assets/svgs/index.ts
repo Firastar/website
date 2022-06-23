@@ -10,5 +10,6 @@ export { default as Moon } from "./Moon";
 export { default as Phone } from "./Phone";
 export { default as RightAngle } from "./RightAngle";
 export { default as RightArrow } from "./RightArrow";
+export { default as LeftArrow } from "./LeftArrow";
 export { default as Sun } from "./Sun";
 export { default as UkraineFlag } from "./UkraineFlag";

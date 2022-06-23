@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { memo, useCallback, useEffect, useRef } from "react";
 import classes from "./LangPopup.module.scss";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
@@ -40,12 +40,23 @@ const LangPopup = ({
     });
   };
 
-  const hidePopup = () => {
+  const hidePopup = useCallback(() => {
     setPopupDisplayConfig({
       visibility: false,
       animate: "",
     });
-  };
+  }, [setPopupDisplayConfig]);
+
+  // to close pop up when window width is changed
+  useEffect(() => {
+    const resizeHandler = () => {
+      if (popupDisplayConfig.visibility && popupDisplayConfig.animate === "") {
+        closePopup();
+      }
+    };
+    window.addEventListener("resize", resizeHandler);
+    return () => window.removeEventListener("resize", resizeHandler);
+  }, [popupDisplayConfig, closePopup]);
 
   return (
     <div
@@ -68,7 +79,7 @@ const LangPopup = ({
           type="radio"
           id="persian"
           name="lang"
-          checked={router.locale === "fa" ? true : false}
+          checked={router.locale === "fa"}
           onChange={() => {
             router.push(router.pathname, router.pathname, { locale: "fa" });
             closePopup();
@@ -89,7 +100,7 @@ const LangPopup = ({
           type="radio"
           id="english"
           name="lang"
-          checked={router.locale === "en" ? true : false}
+          checked={router.locale === "en"}
           onChange={() => {
             router.push(router.pathname, router.pathname, { locale: "en" });
             closePopup();
@@ -103,4 +114,6 @@ const LangPopup = ({
   );
 };
 
-export default LangPopup;
+export default memo(LangPopup);
+
+// pop up is memoized to record radio input checked status

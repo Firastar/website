@@ -1,8 +1,8 @@
 import { useTranslation } from "next-i18next";
 import { useMemo } from "react";
-import { DesktopHeader, MobileHeader } from "@components";
+import { DesktopNavBar, MobileNavBar } from "@components";
 
-const Header = () => {
+const NavBar = () => {
   const { t } = useTranslation();
   const routes = useMemo(
     () => [
@@ -37,10 +37,10 @@ const Header = () => {
 
   return (
     <>
-      <DesktopHeader routes={routes} />
-      <MobileHeader routes={routes} />
+      <DesktopNavBar routes={routes} />
+      <MobileNavBar routes={routes} />
     </>
   );
 };
 
-export default Header;
+export default NavBar;

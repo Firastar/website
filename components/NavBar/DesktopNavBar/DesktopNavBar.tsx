@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import classes from "./DesktopHeader.module.scss";
+import classes from "./DesktopNavBar.module.scss";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import Image from "next/image";
 import Link from "next/link";
-import { LangSwitcher, ThemeSwitcher } from "@components";
+import { ThemeSwitcher, LangSwitcher } from "@components";
 import clsx from "clsx";
 
-interface DesktopHeaderProps {
+interface DesktopNavBarProps {
   routes: {
     id: number;
     title: string;
@@ -16,7 +16,7 @@ interface DesktopHeaderProps {
   }[];
 }
 
-const DesktopHeader = ({ routes }: DesktopHeaderProps) => {
+const DesktopNavBar = ({ routes }: DesktopNavBarProps) => {
   const router = useRouter();
   const { t } = useTranslation();
 
@@ -54,4 +54,4 @@ const DesktopHeader = ({ routes }: DesktopHeaderProps) => {
   );
 };
 
-export default DesktopHeader;
+export default DesktopNavBar;
