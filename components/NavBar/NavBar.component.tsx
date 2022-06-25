@@ -1,5 +1,5 @@
 import { useTranslation } from "next-i18next";
-import { useMemo } from "react";
+import { memo, useMemo } from "react";
 import { DesktopNavBar, MobileNavBar } from "@components";
 
 const NavBar = () => {
@@ -43,4 +43,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default memo(NavBar);

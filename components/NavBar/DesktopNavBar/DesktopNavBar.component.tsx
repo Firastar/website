@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import classes from "./DesktopNavBar.module.scss";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
@@ -54,4 +54,4 @@ const DesktopNavBar = ({ routes }: DesktopNavBarProps) => {
   );
 };
 
-export default DesktopNavBar;
+export default memo(DesktopNavBar);

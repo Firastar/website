@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import classes from "./MobileNavBar.module.scss";
 import { useTranslation } from "next-i18next";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
@@ -52,4 +52,4 @@ const MobileNavBar = ({ routes }: MobileNavBarProps) => {
   );
 };
 
-export default MobileNavBar;
+export default memo(MobileNavBar);

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import classes from "./Footer.module.scss";
 import { useTranslation } from "next-i18next";
 import Link from "next/link";
@@ -57,4 +57,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default memo(Footer);

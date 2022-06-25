@@ -24,8 +24,10 @@
       "@helpers": ["helpers"],
       "@hooks/*": ["hooks/*"],
       "@hooks": ["hooks"],
-      "@layout/*": ["layout/*"],
-      "@layout": ["layout"]
+      "@layouts/*": ["layouts/*"],
+      "@layouts": ["layouts"],
+      "@types/*": ["types/*"],
+      "@types": ["types"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

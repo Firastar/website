@@ -1,3 +1,6 @@
 {
-  "MAIN_TITLE": "Firastar"
+  "MAIN_TITLE": "Firastar",
+  "HEAD_TITLE": {
+    "PREFIX": "Firastar"
+  }
 }

@@ -1,12 +1,12 @@
-import React from "react";
-import classes from "./Layout.module.scss";
+import React, { memo } from "react";
+import classes from "./Main.module.scss";
 import { Footer, Header } from "@components";
 
-interface LayoutProps {
+interface MainProps {
   children: React.ReactNode;
 }
 
-const Layout = ({ children }: LayoutProps) => {
+const Main = ({ children }: MainProps) => {
   return (
     <>
       <div className={classes.layout}>
@@ -19,4 +19,4 @@ const Layout = ({ children }: LayoutProps) => {
   );
 };
 
-export default Layout;
+export default memo(Main);

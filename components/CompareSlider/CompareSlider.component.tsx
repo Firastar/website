@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import classes from "./CompareSlider.module.scss";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
@@ -90,4 +90,4 @@ const CompareSlider = () => {
   );
 };
 
-export default CompareSlider;
+export default memo(CompareSlider);

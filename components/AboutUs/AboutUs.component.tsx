@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import classes from "./AboutUs.module.scss";
 import { useTranslation } from "next-i18next";
 
@@ -13,4 +13,4 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs;
+export default memo(AboutUs);

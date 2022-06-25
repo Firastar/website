@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { memo, useCallback, useEffect, useRef, useState } from "react";
 import { LangSwitchIcon } from "@svgs";
 import { LangPopup } from "@components";
 
@@ -57,4 +57,4 @@ const LangSwitcher = () => {
   );
 };
 
-export default LangSwitcher;
+export default memo(LangSwitcher);

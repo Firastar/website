@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, memo } from "react";
 import { useTheme } from "next-themes";
 import Toggle from "react-toggle";
 import "react-toggle/style.css";
@@ -32,4 +32,4 @@ const ThemeSwitcher = ({ mobileMode = false }: ThemeSwitcherProps) => {
   ) : null;
 };
 
-export default ThemeSwitcher;
+export default memo(ThemeSwitcher);

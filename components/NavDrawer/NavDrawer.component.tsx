@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { memo, useRef } from "react";
 import classes from "./NavDrawer.module.scss";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
@@ -93,4 +93,4 @@ const NavDrawer = ({ showDrawer, setShowDrawer, routes }: NavDrawerProps) => {
   );
 };
 
-export default NavDrawer;
+export default memo(NavDrawer);

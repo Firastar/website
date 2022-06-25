@@ -1,18 +1,16 @@
 import React, { useEffect, useMemo } from "react";
 import "../styles/globals.scss";
-import type { AppProps } from "next/app";
-import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import { ThemeProvider } from "next-themes";
-import Head from "next/head";
-import { Layout } from "@layout";
+import Layout from "@layouts";
 import NextNProgress from "nextjs-progressbar";
 import { appWithTranslation } from "next-i18next";
 import { GetStaticProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { AppProps } from "types";
+import { HeadTitle } from "@components";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const { t } = useTranslation();
   const { locale } = useRouter();
 
   const dir = useMemo(() => (locale === "fa" ? "rtl" : "ltr"), [locale]);
@@ -23,10 +21,8 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <ThemeProvider attribute="class">
-      <Head>
-        <title>{t("common:MAIN_TITLE")}</title>
-      </Head>
-      <Layout>
+      <HeadTitle ns={Component?.ns} />
+      <Layout type={Component?.layout}>
         <NextNProgress height={2} color="#15C39A" />
         <Component {...pageProps} />
       </Layout>
