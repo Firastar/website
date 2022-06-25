@@ -5,5 +5,5 @@ export { default as DesktopNavBar } from "./NavBar/DesktopNavBar/DesktopNavBar";
 export { default as MobileNavBar } from "./NavBar/MobileNavBar/MobileNavBar";
 export { default as LangPopup } from "./LangPopup/LangPopup";
 export { default as LangSwitcher } from "./LangSwitcher/LangSwitcher";
-export { default as MenuSideBar } from "./MenuSideBar/MenuSideBar";
+export { default as NavDrawer } from "./NavDrawer/NavDrawer";
 export { default as ThemeSwitcher } from "./ThemeSwitcher/ThemeSwitcher";

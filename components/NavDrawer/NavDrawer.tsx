@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import classes from "./MenuSideBar.module.scss";
+import classes from "./NavDrawer.module.scss";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import { useLockBodyScroll } from "@hooks";
@@ -10,9 +10,9 @@ import { RightArrow, Phone, Email, LeftArrow } from "@svgs";
 import Link from "next/link";
 import "animate.css";
 
-interface MenuSideBarProps {
-  showMenu: boolean;
-  setShowMenu: (arg0: boolean) => void;
+interface NavDrawerProps {
+  showDrawer: boolean;
+  setShowDrawer: (arg0: boolean) => void;
   routes: {
     id: number;
     title: string;
@@ -20,60 +20,57 @@ interface MenuSideBarProps {
   }[];
 }
 
-const MenuSideBar = ({ showMenu, setShowMenu, routes }: MenuSideBarProps) => {
+const NavDrawer = ({ showDrawer, setShowDrawer, routes }: NavDrawerProps) => {
   const router = useRouter();
   const { t } = useTranslation();
-  const sideBarRef = useRef<HTMLDivElement>(null);
+  const drawerRef = useRef<HTMLDivElement>(null);
 
-  useLockBodyScroll(showMenu);
+  useLockBodyScroll(showDrawer);
 
-  const sideBarHeight = () =>
-    sideBarRef.current?.style.setProperty(
+  const drawerHeight = () =>
+    drawerRef.current?.style.setProperty(
       "min-height",
       `${window.innerHeight}px`
     );
-  sideBarHeight();
+  drawerHeight();
 
   const overlayRef = useRef<HTMLDivElement>(null);
 
   return (
     <div
-      className={clsx(classes.overlay, showMenu ? "visible" : "invisible")}
+      className={clsx(classes.overlay, showDrawer ? "visible" : "invisible")}
       ref={overlayRef}
-      onAnimationEnd={() =>
-        overlayRef.current?.setAttribute("style", "visibility:hidden")
-      }
       onClick={e => {
-        !sideBarRef.current?.contains(e.target as HTMLElement)
-          ? setShowMenu(false)
+        !drawerRef.current?.contains(e.target as HTMLElement)
+          ? setShowDrawer(false)
           : null;
       }}>
       <div
-        ref={sideBarRef}
+        ref={drawerRef}
         className={clsx(
-          classes.menuWrapp,
-          showMenu
+          classes.drawerWrap,
+          showDrawer
             ? "translate-x-0 transition-all duration-200"
             : "translate-x-72 ltr:-translate-x-72 transition-all duration-200",
           classes.ltrGrid
         )}>
-        <div className={classes.menuHeader}>
+        <div className={classes.header}>
           <ThemeSwitcher mobileMode={true} />
-          <div className={classes.firastarLogoTitle}>
+          <div className={classes.logo}>
             <Image src="/icons/logo.png" alt="logo" width={28} height={28} />
             <p>{t("common:MAIN_TITLE")}</p>
           </div>
-          <div className={classes.arrow} onClick={() => setShowMenu(false)}>
+          <div className={classes.arrow} onClick={() => setShowDrawer(false)}>
             {router.locale === "fa" ? <RightArrow /> : <LeftArrow />}
           </div>
         </div>
-        <div className={classes.menuItems}>
+        <div className={classes.items}>
           {routes.map(route => {
             return (
               <Link href={route.path} key={route.id}>
                 <a
                   className={
-                    router.pathname === route.path ? classes.activeMenu : ""
+                    router.pathname === route.path ? classes.activeItem : ""
                   }>
                   {route.title}
                 </a>
@@ -96,4 +93,4 @@ const MenuSideBar = ({ showMenu, setShowMenu, routes }: MenuSideBarProps) => {
   );
 };
 
-export default MenuSideBar;
+export default NavDrawer;

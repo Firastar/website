@@ -1,12 +1,12 @@
-.compareSliderTitle {
+.title {
 	@apply text-center text-7.5 text-[#727272] mb-5;
 }
 
-.desktopCompareSlider {
+.desktop {
 	@apply hidden md:block;
 }
 
-.mobileCompareSlider {
+.mobile {
 	@apply md:hidden;
 }
 
@@ -14,7 +14,7 @@
 	@apply grid h-full place-content-center;
 }
 
-.arrowWrap {
+.arrow {
 	@apply inline-flex gap-x-3 px-1.5 py-3 rounded-[50%] bg-[#bfbfbf] bg-opacity-50 rotate-90;
 	@apply md:gap-x-4 md:px-2 md:py-4  md:rotate-0;
 }

@@ -13,8 +13,8 @@ export default function useLockBodyScroll(open: boolean) {
       paddingRight: window.getComputedStyle(document.body).paddingRight,
     };
 
-    const hasVScroll = window.innerWidth > document.body.clientWidth;
-    // const hasVScroll = document.body.scrollHeight > document.body.clientWidth;
+    // const hasVScroll = window.innerWidth > document.body.clientWidth;
+    const hasVScroll = document.body.scrollHeight > document.body.clientWidth;
 
     const scrollBarWidth = getScrollBarWidth();
 
@@ -31,5 +31,5 @@ export default function useLockBodyScroll(open: boolean) {
       document.body.style.overflow = originalStyle.overflow;
       document.body.style.paddingRight = originalStyle.paddingRight;
     };
-  }, []); // empty array ensures effect is only run on mount and unmount
+  }, [open]); // empty array ensures effect is only run on mount and unmount
 }

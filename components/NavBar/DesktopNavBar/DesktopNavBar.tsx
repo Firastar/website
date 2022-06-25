@@ -38,7 +38,7 @@ const DesktopNavBar = ({ routes }: DesktopNavBarProps) => {
             <Link href={route.path} key={route.id}>
               <a
                 className={
-                  router.pathname === route.path ? classes.activeMenu : ""
+                  router.pathname === route.path ? classes.activeItem : ""
                 }>
                 {route.title}
               </a>

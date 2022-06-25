@@ -14,12 +14,12 @@ const CompareSlider = () => {
 
   return (
     <>
-      <p className={classes.compareSliderTitle}>{t("home:SLIDER_TITLE")}</p>
-      <div className={classes.desktopCompareSlider}>
+      <p className={classes.title}>{t("home:SLIDER_TITLE")}</p>
+      <div className={classes.desktop}>
         <ReactCompareSlider
           handle={
             <div className={classes.handle}>
-              <div className={classes.arrowWrap}>
+              <div className={classes.arrow}>
                 <LeftAngle width={14} height={28} color="white" />
                 <RightAngle width={14} height={28} color="white" />
               </div>
@@ -50,11 +50,11 @@ const CompareSlider = () => {
           }}
         />
       </div>
-      <div className={classes.mobileCompareSlider}>
+      <div className={classes.mobile}>
         <ReactCompareSlider
           handle={
             <div className={classes.handle}>
-              <div className={classes.arrowWrap}>
+              <div className={classes.arrow}>
                 <LeftAngle width={14} height={28} color="white" />
                 <RightAngle width={14} height={28} color="white" />
               </div>

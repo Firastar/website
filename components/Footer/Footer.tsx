@@ -16,7 +16,7 @@ const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <div className={classes.footer}>
+    <div className={classes.wrapper}>
       <div className={classes.contactInfo}>
         <div className={classes.phone}>
           <Phone />

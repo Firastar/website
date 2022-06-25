@@ -3,7 +3,7 @@ import classes from "./MobileNavBar.module.scss";
 import { useTranslation } from "next-i18next";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import { HamburgerMenu } from "@svgs";
-import { MenuSideBar, LangSwitcher } from "@components";
+import { NavDrawer, LangSwitcher } from "@components";
 import Image from "next/image";
 import clsx from "clsx";
 
@@ -17,7 +17,7 @@ interface MobileNavBarProps {
 
 const MobileNavBar = ({ routes }: MobileNavBarProps) => {
   const { t } = useTranslation();
-  const [showMenu, setShowMenu] = useState(false);
+  const [showDrawer, setShowDrawer] = useState(false);
 
   // to display shadow when home page is scrolled
   const [displayShadow, setDisplayShadow] = useState(false);
@@ -27,9 +27,9 @@ const MobileNavBar = ({ routes }: MobileNavBarProps) => {
 
   return (
     <div className={clsx(classes.wrapper, displayShadow && "shadow-md")}>
-      <MenuSideBar
-        showMenu={showMenu}
-        setShowMenu={setShowMenu}
+      <NavDrawer
+        showDrawer={showDrawer}
+        setShowDrawer={setShowDrawer}
         routes={routes}
       />
       <div className={classes.menu}>
@@ -38,14 +38,14 @@ const MobileNavBar = ({ routes }: MobileNavBarProps) => {
           height={24}
           color="black"
           className="cursor-pointer"
-          onClick={() => setShowMenu(true)}
+          onClick={() => setShowDrawer(true)}
         />
       </div>
-      <div className={classes.firastarLogoTitle}>
+      <div className={classes.logo}>
         <Image src="/icons/logo.png" alt="logo" width={40} height={40} />
         <p>{t("common:MAIN_TITLE")}</p>
       </div>
-      <div className={classes.switchers}>
+      <div className={classes.switcher}>
         <LangSwitcher />
       </div>
     </div>

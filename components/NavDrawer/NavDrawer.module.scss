@@ -2,7 +2,7 @@
 	@apply fixed z-100 w-[100vw] h-[100vh] top-0 bottom-0 right-0 left-0 bg-black-medium bg-opacity-70;
 }
 
-.menuWrapp {
+.drawerWrap {
 	@apply absolute z-100 w-72 bg-white dark:bg-gray-dark pt-4 overflow-y-auto;
 	@apply flex flex-col;
 }
@@ -11,11 +11,11 @@
 	direction: ltr;
 }
 
-.menuHeader {
+.header {
 	@apply flex flex-row rtl:flex-row-reverse items-center px-5 mt-[0.4rem];
 }
 
-.firastarLogoTitle {
+.logo {
 	@apply flex rtl:flex-row-reverse justify-center items-center flex-1 min-w-[7.5rem] text-primary text-3 font-bold gap-1;
 }
 
@@ -23,12 +23,12 @@
 	@apply cursor-pointer w-[42px] flex justify-end rtl:justify-start;
 }
 
-.menuItems {
+.items {
 	@apply flex flex-col rtl:items-end mt-8 text-black-medium dark:text-white;
 	@apply font-semibold text-4 gap-8 flex-1 px-5;
 }
 
-.activeMenu {
+.activeItem {
 	@apply text-primary;
 }
 
