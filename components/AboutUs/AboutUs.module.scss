@@ -1,0 +1,12 @@
+.wrapper {
+	@apply hidden lg:block min-h-[calc(100vh_-_118px)];
+	@apply bg-[url("/images/about-us.jpg")] -mx-[4.375rem] px-[6.5rem] py-[8rem];
+}
+
+.title {
+	@apply text-10 font-bold text-black-ultra mb-6 mr-[2px];
+}
+
+.text {
+	@apply text-6 font-normal text-sonic-silver;
+}

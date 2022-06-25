@@ -1,10 +1,15 @@
 import type { NextPage } from "next";
-import { CompareSlider } from "@components";
+import { AboutUs, CompareSlider } from "@components";
 import { GetStaticProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const Home: NextPage = () => {
-  return <CompareSlider />;
+  return (
+    <>
+      <CompareSlider />
+      <AboutUs />
+    </>
+  );
 };
 
 export default Home;
