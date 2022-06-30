@@ -1,4 +1,4 @@
-import React, { memo, useRef } from "react";
+import React, { memo, useEffect, useRef, useState } from "react";
 import classes from "./NavDrawer.module.scss";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
@@ -35,6 +35,11 @@ const NavDrawer = ({ showDrawer, setShowDrawer, routes }: NavDrawerProps) => {
   drawerHeight();
 
   const overlayRef = useRef<HTMLDivElement>(null);
+
+  // close nav drawer after item will be choosed
+  useEffect(() => {
+    setShowDrawer(false);
+  }, [router.asPath, setShowDrawer]);
 
   return (
     <div
