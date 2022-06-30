@@ -22,7 +22,7 @@ interface NavDrawerProps {
 
 const NavDrawer = ({ showDrawer, setShowDrawer, routes }: NavDrawerProps) => {
   const router = useRouter();
-  const { t } = useTranslation();
+  const { t } = useTranslation("common");
   const drawerRef = useRef<HTMLDivElement>(null);
 
   useLockBodyScroll(showDrawer);
@@ -58,7 +58,7 @@ const NavDrawer = ({ showDrawer, setShowDrawer, routes }: NavDrawerProps) => {
           <ThemeSwitcher mobileMode={true} />
           <div className={classes.logo}>
             <Image src="/icons/logo.png" alt="logo" width={28} height={28} />
-            <p>{t("common:MAIN_TITLE")}</p>
+            <p>{t("MAIN_TITLE")}</p>
           </div>
           <div className={classes.arrow} onClick={() => setShowDrawer(false)}>
             {router.locale === "fa" ? <RightArrow /> : <LeftArrow />}
@@ -81,7 +81,7 @@ const NavDrawer = ({ showDrawer, setShowDrawer, routes }: NavDrawerProps) => {
         <div className={classes.contactInfo}>
           <div className={classes.phone}>
             <Phone width={16} height={16} />
-            <p>{t("home:PHONE_NUMBER")}</p>
+            <p>{t("PHONE_NUMBER")}</p>
           </div>
           <div className={classes.email}>
             <Email width={16} height={16} />

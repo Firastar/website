@@ -9,5 +9,5 @@ export { default as NavDrawer } from "./NavDrawer/NavDrawer.component";
 export { default as ThemeSwitcher } from "./ThemeSwitcher/ThemeSwitcher.component";
 export { default as AboutUs } from "./AboutUs/AboutUs.component";
 export { default as HeadTitle } from "./HeadTitle/HeadTitle.component";
-export { default as Features } from "./Features/Features.component";
+export { default as FeaturesSection } from "./FeaturesSection/FeaturesSection.component";
 export { default as FeatureCard } from "./FeatureCard/FeatureCard.component";

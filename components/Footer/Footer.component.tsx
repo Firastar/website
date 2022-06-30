@@ -13,14 +13,14 @@ import {
 } from "@svgs";
 
 const Footer = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("common");
 
   return (
     <div className={classes.wrapper}>
       <div className={classes.contactInfo}>
         <div className={classes.phone}>
           <Phone />
-          <p>{t("home:PHONE_NUMBER")}</p>
+          <p>{t("PHONE_NUMBER")}</p>
         </div>
         <div className={classes.email}>
           <Email />
@@ -29,7 +29,7 @@ const Footer = () => {
       </div>
       <div className={classes.statement}>
         <UkraineFlag width={24} height={20} />
-        {t("home:STATEMENT")}
+        {t("STATEMENT")}
       </div>
       <div className={classes.socialMedia}>
         <Link href="/">

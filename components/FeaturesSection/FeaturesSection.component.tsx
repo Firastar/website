@@ -1,18 +1,14 @@
 import React, { memo, useMemo } from "react";
-import classes from "./Features.module.scss";
+import classes from "./FeaturesSection.module.scss";
 import { FeatureCard } from "@components";
+import { useTranslation } from "next-i18next";
 import Image from "next/image";
 import Link from "next/link";
-import { useTranslation } from "next-i18next";
 
-interface FeaturesProps {
-  className: string;
-}
+const FeaturesSection = () => {
+  const { t } = useTranslation();
 
-const Features = ({ className }: FeaturesProps) => {
-  const { t } = useTranslation("features");
-
-  const homeFeatureItems = useMemo(
+  const featuresSectionItems = useMemo(
     () => [
       {
         id: 1,
@@ -39,8 +35,8 @@ const Features = ({ className }: FeaturesProps) => {
   );
 
   return (
-    <div className={className}>
-      <p className={classes.title}>{t("TITLE")}</p>
+    <div className={classes.wrapper}>
+      <p className={classes.title}>{t("features-section:TITLE")}</p>
       <div className={classes.leftCol}>
         <div className={classes.imageContainer}>
           <Image
@@ -53,16 +49,16 @@ const Features = ({ className }: FeaturesProps) => {
         </div>
         <div className={classes.rightCol}>
           <div className={classes.cardList}>
-            {homeFeatureItems.map(item => (
+            {featuresSectionItems.map(item => (
               <FeatureCard key={item.id} text={item.text} />
             ))}
           </div>
           <p className={classes.descText}>
-            {t("DESC_TEXT.PART_I")}{" "}
+            {t("features-section:DESC_TEXT.PART_I")}{" "}
             <span className={classes.link}>
-              <Link href="/features">{t("LINK_TEXT")}</Link>
+              <Link href="/features">{t("features-section:LINK_TEXT")}</Link>
             </span>{" "}
-            {t("DESC_TEXT.PART_II")}
+            {t("features-section:DESC_TEXT.PART_II")}
           </p>
         </div>
       </div>
@@ -70,4 +66,4 @@ const Features = ({ className }: FeaturesProps) => {
   );
 };
 
-export default memo(Features);
+export default memo(FeaturesSection);

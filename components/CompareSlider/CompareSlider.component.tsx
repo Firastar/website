@@ -8,17 +8,13 @@ import {
 } from "react-compare-slider";
 import { LeftAngle, RightAngle } from "@svgs";
 
-interface CompareSlider {
-  className: string;
-}
-
-const CompareSlider = ({ className }: CompareSlider) => {
+const CompareSlider = () => {
   const { locale } = useRouter();
-  const { t } = useTranslation();
+  const { t } = useTranslation("slider");
 
   return (
-    <div className={className}>
-      <p className={classes.title}>{t("home:SLIDER_TITLE")}</p>
+    <>
+      <p className={classes.title}>{t("TITLE")}</p>
       <div className={classes.desktop}>
         <ReactCompareSlider
           handle={
@@ -31,7 +27,7 @@ const CompareSlider = ({ className }: CompareSlider) => {
           }
           itemOne={
             <ReactCompareSliderImage
-              src="/images/decorative-pic.png"
+              src="/images/decorative-pic.jpg"
               alt="Image-one"
               style={{
                 filter: locale === "fa" ? "grayscale(0)" : "grayscale(1)",
@@ -40,7 +36,7 @@ const CompareSlider = ({ className }: CompareSlider) => {
           }
           itemTwo={
             <ReactCompareSliderImage
-              src="/images/decorative-pic.png"
+              src="/images/decorative-pic.jpg"
               alt="Image-two"
               style={{
                 filter: locale === "fa" ? "grayscale(1)" : "grayscale(0)",
@@ -66,7 +62,7 @@ const CompareSlider = ({ className }: CompareSlider) => {
           }
           itemOne={
             <ReactCompareSliderImage
-              src="/images/decorative-pic2.png"
+              src="/images/decorative-pic2.jpg"
               alt="Image-one"
               style={{
                 filter: "grayscale(1)",
@@ -75,7 +71,7 @@ const CompareSlider = ({ className }: CompareSlider) => {
           }
           itemTwo={
             <ReactCompareSliderImage
-              src="/images/decorative-pic2.png"
+              src="/images/decorative-pic2.jpg"
               alt="Image-two"
               style={{
                 filter: "grayscale(0)",
@@ -90,7 +86,7 @@ const CompareSlider = ({ className }: CompareSlider) => {
           }}
         />
       </div>
-    </div>
+    </>
   );
 };
 

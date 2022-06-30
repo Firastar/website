@@ -23,7 +23,7 @@ const LangPopup = ({
   closePopup,
 }: LangPopupProps) => {
   const router = useRouter();
-  const { t } = useTranslation();
+  const { t } = useTranslation("lang-popup");
 
   const popupRef = useRef<HTMLDivElement>(null);
 
@@ -86,7 +86,7 @@ const LangPopup = ({
           }}
         />
         <label htmlFor="persian" className={classes.label}>
-          {t("home:PERSIAN_LANG")}
+          {t("PERSIAN")}
         </label>
       </div>
       <div
@@ -107,7 +107,7 @@ const LangPopup = ({
           }}
         />
         <label htmlFor="english" className={classes.label}>
-          {t("home:ENGLISH_LANG")}
+          {t("ENGLISH")}
         </label>
       </div>
     </div>

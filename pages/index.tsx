@@ -1,4 +1,4 @@
-import { AboutUs, CompareSlider, Features } from "@components";
+import { AboutUs, CompareSlider, FeaturesSection } from "@components";
 import { GetStaticProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { Page } from "types";
@@ -6,8 +6,8 @@ import { Page } from "types";
 const Home: Page = () => {
   return (
     <>
-      <CompareSlider className="pt-10 lg:pt-24" />
-      <Features className="lg:px-8 lg:pt-16 lg:pb-32 pt-10 pb-12" />
+      <CompareSlider />
+      <FeaturesSection />
       <AboutUs />
     </>
   );
@@ -25,8 +25,10 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
         "menu-items",
         "home",
         "about-us",
-        "features",
+        "features-section",
         "feature-items",
+        "slider",
+        "lang-popup",
       ])),
     },
   };
