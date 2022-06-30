@@ -1,6 +1,6 @@
 .wrapper {
 	@apply rounded-lg border border-gray-light-shade flex gap-4 items-center;
-	@apply min-h-[3.5rem] px-4 py-2 lg:h-24 lg:px-7 lg:py-8;
+	@apply min-h-[3.5rem] px-4 py-2 lg:min-h-[6rem] lg:px-6 lg:py-2;
 }
 
 .checkCircle {
@@ -12,5 +12,5 @@
 }
 
 .featureText {
-	@apply text-black-ultra dark:text-white text-3.5 lg:text-4.5 lg:font-medium;
+	@apply text-black-ultra dark:text-white text-3.5 lg:text-4 lg:font-medium;
 }

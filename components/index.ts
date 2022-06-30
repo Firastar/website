@@ -11,3 +11,4 @@ export { default as AboutUs } from "./AboutUs/AboutUs.component";
 export { default as HeadTitle } from "./HeadTitle/HeadTitle.component";
 export { default as FeaturesSection } from "./FeaturesSection/FeaturesSection.component";
 export { default as FeatureCard } from "./FeatureCard/FeatureCard.component";
+export { default as FeaturesPage } from "./FeaturesPage/FeaturesPage.component";

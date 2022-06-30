@@ -7,12 +7,12 @@
   "FEATURE_6": "Modify the spacing of the postfixes: ام، ای، ایم، اید، اند، ات، اش، مان، تان، شان",
   "FEATURE_7": "Modify the spacing of plural postfixes: ها، های و هایی",
   "FEATURE_8": "Convert two minus consecutive characters to short dashes (–) and three minus consecutive characters to long dashes (—)",
-  "FEATURE_9": "Modify the spacing of various postfixes such as: ‌تر, ‌ترین, ‌تري",
+  "FEATURE_9": "Modify the spacing of various postfixes such as: ‌تر، ‌ترین، ‌تري",
   "FEATURE_10": "Modify the spacing of the postfixes: هایی، هایم، هایت، هایش، هایمان، هایتان، هایشان",
   "FEATURE_11": "Set spacing for quotation marks, {curly-braces}, [brackets] and (parentheses)",
   "FEATURE_12": "Modify the spacing of the prefixes: می، نمی و ب",
   "FEATURE_13": "Correct spacing before and after all kinds of punctuation marks (period, semicolon, comma, colon, question mark, exclamation mark)",
   "FEATURE_14": "Modify and convert English characters to Persian (, – ; – ? ← ، – ؛ – ؟)",
-  "FEATURE_15": "Use the «ی» sign instead of «همزه». For example, convert «خانهٔ علی» to «خانه‌ی علی» and vice versa",
-  "FEATURE_16": "Modify the date and use '/' instead of '-' in each section, such as '02/03/1400'"
+  "FEATURE_15": "Use the letter «ی» instead of «ء». For example, convert «خانهٔ علی» to «خانه‌ی علی» and vice versa",
+  "FEATURE_16": "Modify the date and use '/' instead of '-' in each section, such as 1400/03/02"
 }
