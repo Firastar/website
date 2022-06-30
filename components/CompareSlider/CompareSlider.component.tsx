@@ -8,12 +8,16 @@ import {
 } from "react-compare-slider";
 import { LeftAngle, RightAngle } from "@svgs";
 
-const CompareSlider = () => {
+interface CompareSlider {
+  className: string;
+}
+
+const CompareSlider = ({ className }: CompareSlider) => {
   const { locale } = useRouter();
   const { t } = useTranslation();
 
   return (
-    <>
+    <div className={className}>
       <p className={classes.title}>{t("home:SLIDER_TITLE")}</p>
       <div className={classes.desktop}>
         <ReactCompareSlider
@@ -86,7 +90,7 @@ const CompareSlider = () => {
           }}
         />
       </div>
-    </>
+    </div>
   );
 };
 

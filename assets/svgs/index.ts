@@ -13,3 +13,4 @@ export { default as RightArrow } from "./RightArrow.svg";
 export { default as LeftArrow } from "./LeftArrow.svg";
 export { default as Sun } from "./Sun.svg";
 export { default as UkraineFlag } from "./UkraineFlag.svg";
+export { default as Check } from "./Check.svg";

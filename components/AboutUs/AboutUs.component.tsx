@@ -3,12 +3,12 @@ import classes from "./AboutUs.module.scss";
 import { useTranslation } from "next-i18next";
 
 const AboutUs = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("about-us");
 
   return (
     <div className={classes.wrapper}>
-      <p className={classes.title}>{t("home:ABOUTUS_TITLE")}</p>
-      <p className={classes.text}>{t("home:ABOUTUS_TEXT")}</p>
+      <p className={classes.title}>{t("TITLE")}</p>
+      <p className={classes.text}>{t("TEXT")}</p>
     </div>
   );
 };

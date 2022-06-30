@@ -1,6 +1,5 @@
 import React, { memo } from "react";
-import classes from "./Main.module.scss";
-import { Footer, Header } from "@components";
+import { Footer, NavBar } from "@components";
 
 interface MainProps {
   children: React.ReactNode;
@@ -9,12 +8,9 @@ interface MainProps {
 const Main = ({ children }: MainProps) => {
   return (
     <>
-      <div className={classes.layout}>
-        {/* <div className={classes.greenShadow} /> */}
-        <Header />
-        {children}
-        <Footer />
-      </div>
+      <NavBar />
+      {children}
+      <Footer />
     </>
   );
 };

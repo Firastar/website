@@ -21,12 +21,17 @@ module.exports = {
     colors: {
       primary: "#15C39A",
       secondary: "#FFBC79",
+      // black
       "black-pure": "#000000",
       "black-ultra": "#070707",
       "black-medium": "#0E1019",
       "black-light": "#727272",
+      // white
       white: "#f9f9f9",
+      // gray
       "gray-dark": "#242526",
+      "gray-light-shade": "#cbcbcb",
+      // silver
       silver: "#D7D7D7",
       "sonic-silver": "#757575",
     },
