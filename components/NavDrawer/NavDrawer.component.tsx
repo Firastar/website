@@ -70,7 +70,7 @@ const NavDrawer = ({ showDrawer, setShowDrawer, routes }: NavDrawerProps) => {
               <Link href={route.path} key={route.id}>
                 <a
                   className={
-                    router.pathname === route.path ? classes.activeItem : ""
+                    router.asPath === route.path ? classes.activeItem : ""
                   }>
                   {route.title}
                 </a>

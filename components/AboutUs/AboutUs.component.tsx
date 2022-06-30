@@ -6,7 +6,7 @@ const AboutUs = () => {
   const { t } = useTranslation("about-us");
 
   return (
-    <div className={classes.wrapper}>
+    <div id="about-us" className={classes.wrapper}>
       <p className={classes.title}>{t("TITLE")}</p>
       <p className={classes.text}>{t("TEXT")}</p>
     </div>

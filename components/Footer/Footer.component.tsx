@@ -16,7 +16,7 @@ const Footer = () => {
   const { t } = useTranslation("common");
 
   return (
-    <div className={classes.wrapper}>
+    <div id="contact-us" className={classes.wrapper}>
       <div className={classes.contactInfo}>
         <div className={classes.phone}>
           <Phone />

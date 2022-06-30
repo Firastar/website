@@ -1,4 +1,4 @@
-import React, { memo, useMemo } from "react";
+import React, { memo, useEffect, useMemo, useRef, useState } from "react";
 import classes from "./FeaturesSection.module.scss";
 import { FeatureCard } from "@components";
 import { useTranslation } from "next-i18next";
@@ -7,6 +7,18 @@ import Link from "next/link";
 
 const FeaturesSection = () => {
   const { t } = useTranslation();
+
+  const featuresSectionRef = useRef<HTMLDivElement>(null);
+
+  // const [isMounted, setIsMounted] = useState(false);
+
+  // useEffect(() => {
+  //   setIsMounted(true);
+  // }, []);
+
+  // isMounted && window.scrollTo(0, (featuresSectionRef.current.offsetTop = 55));
+
+  // window.scrollTo(0,  {(featuresSectionRef.offsetTop = 55)});
 
   const featuresSectionItems = useMemo(
     () => [
@@ -35,7 +47,7 @@ const FeaturesSection = () => {
   );
 
   return (
-    <div className={classes.wrapper}>
+    <div id="features" ref={featuresSectionRef} className={classes.wrapper}>
       <p className={classes.title}>{t("features-section:TITLE")}</p>
       <div className={classes.leftCol}>
         <div className={classes.imageContainer}>

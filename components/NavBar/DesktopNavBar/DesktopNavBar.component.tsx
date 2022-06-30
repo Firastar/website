@@ -20,6 +20,8 @@ const DesktopNavBar = ({ routes }: DesktopNavBarProps) => {
   const router = useRouter();
   const { t } = useTranslation();
 
+  console.log(router.asPath);
+
   // to display shadow when home page is scrolled
   const [displayShadow, setDisplayShadow] = useState(false);
   useScrollPosition(({ currPos }) => {
@@ -38,7 +40,7 @@ const DesktopNavBar = ({ routes }: DesktopNavBarProps) => {
             <Link href={route.path} key={route.id}>
               <a
                 className={
-                  router.pathname === route.path ? classes.activeItem : ""
+                  router.asPath === route.path ? classes.activeItem : ""
                 }>
                 {route.title}
               </a>

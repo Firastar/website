@@ -14,22 +14,22 @@ const NavBar = () => {
       {
         id: 2,
         title: t("menu-items:FEATURES"),
-        path: "/features",
+        path: "/#features",
       },
       {
         id: 3,
         title: t("menu-items:ONLINE_EDITING"),
-        path: "/sample",
+        path: "/online-editing",
       },
       {
         id: 4,
         title: t("menu-items:ABOUT_US"),
-        path: "/source-code",
+        path: "/#about-us",
       },
       {
         id: 5,
         title: t("menu-items:CONTACT_US"),
-        path: "/about-us",
+        path: "/#contact-us",
       },
     ],
     [t]
