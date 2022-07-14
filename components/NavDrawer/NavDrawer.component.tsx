@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useRef } from "react";
+import React, { memo, useEffect, useRef, useState } from "react";
 import classes from "./NavDrawer.module.scss";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
@@ -21,6 +21,9 @@ interface NavDrawerProps {
 }
 
 const NavDrawer = ({ showDrawer, setShowDrawer, routes }: NavDrawerProps) => {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
   const router = useRouter();
   const { t } = useTranslation("common");
   const drawerRef = useRef<HTMLDivElement>(null);
@@ -35,11 +38,6 @@ const NavDrawer = ({ showDrawer, setShowDrawer, routes }: NavDrawerProps) => {
   drawerHeight();
 
   const overlayRef = useRef<HTMLDivElement>(null);
-
-  // close nav drawer after item will be choosed
-  useEffect(() => {
-    setShowDrawer(false);
-  }, [router.asPath, setShowDrawer]);
 
   return (
     <div
@@ -72,14 +70,17 @@ const NavDrawer = ({ showDrawer, setShowDrawer, routes }: NavDrawerProps) => {
         <div className={classes.items}>
           {routes.map(route => {
             return (
-              <Link href={route.path} key={route.id}>
-                <a
-                  className={
-                    router.asPath === route.path ? classes.activeItem : ""
-                  }>
-                  {route.title}
-                </a>
-              </Link>
+              mounted && (
+                <Link href={route.path} key={route.id}>
+                  <a
+                    className={
+                      router.asPath === route.path ? classes.activeItem : ""
+                    }
+                    onClick={() => setShowDrawer(false)}>
+                    {route.title}
+                  </a>
+                </Link>
+              )
             );
           })}
         </div>

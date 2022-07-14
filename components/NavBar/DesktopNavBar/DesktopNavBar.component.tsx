@@ -1,4 +1,4 @@
-import React, { memo, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import classes from "./DesktopNavBar.module.scss";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
@@ -17,6 +17,9 @@ interface DesktopNavBarProps {
 }
 
 const DesktopNavBar = ({ routes }: DesktopNavBarProps) => {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
   const router = useRouter();
   const { t } = useTranslation();
 
@@ -35,14 +38,16 @@ const DesktopNavBar = ({ routes }: DesktopNavBarProps) => {
       <div className={classes.menu}>
         {routes.map(route => {
           return (
-            <Link href={route.path} key={route.id}>
-              <a
-                className={
-                  router.asPath === route.path ? classes.activeItem : ""
-                }>
-                {route.title}
-              </a>
-            </Link>
+            mounted && (
+              <Link href={route.path} key={route.id}>
+                <a
+                  className={
+                    router.asPath === route.path ? classes.activeItem : ""
+                  }>
+                  {route.title}
+                </a>
+              </Link>
+            )
           );
         })}
       </div>
