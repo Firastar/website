@@ -1,0 +1,7 @@
+.title {
+	@apply text-center text-5 lg:text-6 font-semibold mt-8 lg:mt-12 mb-4 lg:mb-6;
+}
+
+.cardWrap {
+	@apply grid lg:grid-cols-3 lg:gap-x-12 gap-y-4 lg:gap-y-6;
+}

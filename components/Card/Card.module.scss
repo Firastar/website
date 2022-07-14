@@ -1,0 +1,23 @@
+.wrapper {
+	@apply border-2 rounded-xl p-6;
+}
+
+// .head {
+// 	@apply flex  items-center;
+// }
+
+.avatarWrap {
+	@apply flex items-center justify-between;
+}
+
+.avatar {
+	@apply rounded-full;
+}
+
+.userName {
+	@apply text-3.5 mt-2;
+}
+
+.content {
+	@apply mt-4 text-3.5 lg:text-4;
+}

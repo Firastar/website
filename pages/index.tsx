@@ -1,4 +1,9 @@
-import { AboutUs, CompareSlider, FeaturesSection } from "@components";
+import {
+  AboutUs,
+  CompareSlider,
+  FeaturesSection,
+  FirastarUX,
+} from "@components";
 import { GetStaticProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { Page } from "types";
@@ -9,6 +14,7 @@ const Home: Page = () => {
       <CompareSlider />
       <FeaturesSection />
       <AboutUs />
+      <FirastarUX />
     </>
   );
 };
@@ -29,6 +35,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
         "feature-items",
         "slider",
         "lang-popup",
+        "firastar-ux",
       ])),
     },
   };
