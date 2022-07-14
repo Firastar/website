@@ -1,13 +1,13 @@
 .wrapper {
-	@apply lg:min-h-[calc(100vh_-_118px)] bg-[url("/images/about-us-light.jpg")] dark:bg-[url("/images/about-us-dark.jpg")];
-	@apply flex flex-col justify-center -mx-[2.1875rem] lg:-mx-[4.375rem] px-[2.9375rem] py-4 lg:px-[6.5rem] lg:py-[4rem];
+	@apply bg-[url("/images/about-us-light.jpg")] dark:bg-[url("/images/about-us-dark.jpg")];
+	@apply -mx-[2.1875rem] lg:-mx-[4.375rem] px-[2.9375rem] py-12 lg:px-[6.5rem] lg:py-[4rem];
 }
 
 // lg:min-h-[calc(100vh_-_118px)]
 .title {
-	@apply text-4 lg:text-8 font-bold text-black-ultra dark:text-white mb-2 lg:mb-6 mr-2;
+	@apply text-5 lg:text-8 font-bold text-black-ultra dark:text-white mb-2 lg:mb-6 mr-2;
 }
 
 .text {
-	@apply text-3.5 lg:text-4 font-normal text-sonic-silver dark:text-white lg:leading-8;
+	@apply text-4 font-normal text-sonic-silver dark:text-white lg:leading-8;
 }
