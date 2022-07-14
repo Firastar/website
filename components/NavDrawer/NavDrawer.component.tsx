@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useRef, useState } from "react";
+import React, { memo, useEffect, useRef } from "react";
 import classes from "./NavDrawer.module.scss";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
