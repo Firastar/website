@@ -1,7 +1,7 @@
 import React, { memo, useMemo } from "react";
 import classes from "./FeaturesPage.module.scss";
 import { useTranslation } from "next-i18next";
-import { FeatureCard } from "@components";
+import { FeatureCard, FeaturesHeader } from "@components";
 
 const FeaturesPage = () => {
   const { t } = useTranslation();
@@ -76,11 +76,14 @@ const FeaturesPage = () => {
     [t]
   );
   return (
-    <div className={classes.featuresBoard}>
-      {featuresPageItems.map(item => (
-        <FeatureCard key={item.id} text={item.text} />
-      ))}
-    </div>
+    <>
+      <FeaturesHeader />
+      <div className={classes.featuresBoard}>
+        {featuresPageItems.map(item => (
+          <FeatureCard key={item.id} text={item.text} />
+        ))}
+      </div>
+    </>
   );
 };
 
