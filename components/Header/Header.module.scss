@@ -1,9 +1,9 @@
 .wrapper {
-	@apply mx-2 my-6 lg:mx-8 lg:mb-24 lg:mt-16;
+	@apply mx-3 mt-6 mb-10 lg:mx-8 lg:mb-24 lg:mt-[4.75rem];
 }
 
 .cols {
-	@apply flex gap-x-4 justify-between ;
+	@apply flex gap-x-4 justify-between;
 }
 
 .rightCol {
@@ -24,7 +24,7 @@
 }
 
 .underline {
-	@apply absolute -right-4 lg:-right-8 w-[5rem] lg:w-[11.25rem] xl:w-[18.43rem] 3xl:w-[15rem];
+	@apply absolute -right-4 -bottom-2 lg:-right-8 w-[5rem] lg:w-[11.25rem] xl:w-[18.43rem] xl:-bottom-4 3xl:w-[15rem];
 }
 
 .deskText {
@@ -32,7 +32,7 @@
 }
 
 .mobText {
-	@apply text-3.5 text-black-light dark:text-white lg:hidden mt-4;
+	@apply text-3.5 text-black-light dark:text-white lg:hidden mt-6;
 }
 
 .pages {
@@ -40,5 +40,5 @@
 }
 
 .btnWrap {
-	@apply flex gap-4 justify-center lg:justify-end mt-4;
+	@apply flex gap-2 2xs:gap-10 lg:gap-4 justify-center lg:justify-end mt-6;
 }

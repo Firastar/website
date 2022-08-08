@@ -24,7 +24,7 @@ const Header = () => {
               <Underline
                 className={clsx(
                   classes.underline,
-                  locale === "en" && "-bottom-1 xl:-left-12"
+                  locale === "en" && "rotate-[-1.5deg] !-bottom-1 xl:!-left-12"
                 )}
               />
             </div>

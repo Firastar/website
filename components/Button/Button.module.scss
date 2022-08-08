@@ -1,6 +1,6 @@
 .btn {
-	@apply w-36 h-11 lg:w-56 lg:h-16 border-2 border-primary rounded-[20px] px-4 py-3;
+	@apply w-32 h-11 lg:w-56 lg:h-16 border-2 border-primary rounded-[20px] px-1 2xs:px-3 py-3 ;
 	@apply flex gap-3 justify-center items-center;
 	@apply text-primary text-3.5 lg:text-5 font-semibold;
-	@apply hover:shadow-[inset_0_-4rem_0_0_#15C39A] hover:text-white transition duration-1000;
+	@apply hover:shadow-[inset_0_-4rem_0_0_#15C39A] hover:text-white transition duration-700;
 }
