@@ -1,0 +1,22 @@
+.wrapper {
+	@apply mt-8 flex flex-col gap-y-12 lg:flex-row;
+}
+
+.beforeWrap,
+.afterWrap {
+	@apply border-2 border-gray-light-shade rounded-2xl p-6 pb-3;
+	@apply w-full min-h-[23.5rem]  flex flex-col items-end gap-4;
+}
+
+.beforeWrap {
+	@apply lg:border-l-0 lg:rounded-l-none;
+}
+
+.afterWrap {
+	@apply lg:rounded-r-none;
+}
+
+.before,
+.after {
+	@apply w-full min-h-[17.5rem] outline-none px-2 text-3.5 lg:text-4;
+}

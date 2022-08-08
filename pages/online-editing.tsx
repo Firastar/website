@@ -1,11 +1,11 @@
 import React from "react";
-import { AboutUs, CompareSlider, FeaturesSection } from "@components";
+import { OnlineEditor } from "@components";
 import { GetStaticProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { Page } from "types";
 
 const OnlineEditing: Page = () => {
-  return <div>OnlineEditing</div>;
+  return <OnlineEditor />;
 };
 
 export default OnlineEditing;

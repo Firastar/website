@@ -17,3 +17,4 @@ export { default as Card } from "./Card/Card.component";
 export { default as FirastarUX } from "./FirastarUX/FirastarUX.component";
 export { default as Header } from "./Header/Header.component";
 export { default as Button } from "./Button/Button.component";
+export { default as OnlineEditor } from "./OnlineEditor/OnlineEditor.component";
