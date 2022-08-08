@@ -1,0 +1,44 @@
+.wrapper {
+	@apply mx-2 my-6 lg:mx-8 lg:mb-24 lg:mt-16;
+}
+
+.cols {
+	@apply flex gap-x-4 justify-between ;
+}
+
+.rightCol {
+	@apply basis-2/3 flex flex-col gap-y-8 justify-center max-w-[41rem] 3xl:max-w-none;
+}
+
+.leftCol {
+	@apply basis-1/3 flex justify-center;
+}
+
+.title {
+	@apply text-6 font-bold text-primary lg:text-5xl lg:font-black lg:leading-[5rem];
+	@apply xl:leading-[7rem] xl:text-7xl relative;
+}
+
+.underlineWrap {
+	@apply relative inline-block;
+}
+
+.underline {
+	@apply absolute -right-4 lg:-right-8 w-[5rem] lg:w-[11.25rem] xl:w-[18.43rem] 3xl:w-[15rem];
+}
+
+.deskText {
+	@apply text-5 font-medium text-black-light dark:text-white hidden lg:block px-8;
+}
+
+.mobText {
+	@apply text-3.5 text-black-light dark:text-white lg:hidden mt-4;
+}
+
+.pages {
+	@apply w-[5.75rem] h-[5.5rem] lg:w-[18.75rem] lg:h-[13.125rem] xl:w-[24.5rem] xl:h-[17.5rem];
+}
+
+.btnWrap {
+	@apply flex gap-4 justify-center lg:justify-end mt-4;
+}

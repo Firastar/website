@@ -14,3 +14,5 @@ export { default as FeatureCard } from "./FeatureCard/FeatureCard.component";
 export { default as FeaturesPage } from "./FeaturesPage/FeaturesPage.component";
 export { default as Card } from "./Card/Card.component";
 export { default as FirastarUX } from "./FirastarUX/FirastarUX.component";
+export { default as Header } from "./Header/Header.component";
+export { default as Button } from "./Button/Button.component";

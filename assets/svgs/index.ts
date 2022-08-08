@@ -14,3 +14,7 @@ export { default as LeftArrow } from "./LeftArrow.svg";
 export { default as Sun } from "./Sun.svg";
 export { default as UkraineFlag } from "./UkraineFlag.svg";
 export { default as Check } from "./Check.svg";
+export { default as Pages } from "./Pages.svg";
+export { default as Underline } from "./Underline.svg";
+export { default as Chrome } from "./Chrome.svg";
+export { default as Firefox } from "./Firefox.svg";

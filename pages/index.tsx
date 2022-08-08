@@ -1,4 +1,5 @@
 import {
+  Header,
   AboutUs,
   CompareSlider,
   FeaturesSection,
@@ -11,6 +12,7 @@ import { Page } from "types";
 const Home: Page = () => {
   return (
     <>
+      <Header />
       <CompareSlider />
       <FeaturesSection />
       <AboutUs />
@@ -30,6 +32,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
         "common",
         "menu-items",
         "home",
+        "header",
         "about-us",
         "features-section",
         "feature-items",
