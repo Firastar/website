@@ -1,0 +1,23 @@
+.wrapper {
+	@apply bg-[url("/images/features-header.png")] min-h-[8rem] lg:min-h-[18.75rem];
+	@apply -mx-[2.1875rem] lg:-mx-[4.375rem] bg-cover mt-6 lg:mt-8 px-9 py-3 lg:px-[5.5rem];
+	@apply flex justify-between items-center;
+}
+
+.rightCol {
+	@apply text-white flex flex-col gap-y-2 lg:gap-y-4;
+	@apply rtl:pl-[15%] rtl:xl:pl-[35%] ltr:pr-[15%] ltr:xl:pr-[35%] lg:py-10;
+	@apply flex-1;
+}
+
+.title {
+	@apply text-5 font-bold lg:text-5xl xl:text-[3.5rem] lg:font-black;
+}
+
+.text {
+	@apply text-3.5 lg:text-4.5 font-medium;
+}
+
+.leftCol {
+	@apply hidden lg:block;
+}

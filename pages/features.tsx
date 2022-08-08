@@ -21,6 +21,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
       ...(await serverSideTranslations(locale as string, [
         "common",
         "features",
+        "features-header",
         "lang-popup",
         "menu-items",
         "feature-items",
