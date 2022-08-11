@@ -10,6 +10,8 @@ const OnlineEditing: Page = () => {
 
 export default OnlineEditing;
 
+OnlineEditing.ns = "online-editing";
+
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
@@ -22,6 +24,8 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
         "feature-items",
         "slider",
         "lang-popup",
+        "online-editing",
+        "online-editor",
       ])),
     },
   };

@@ -10,16 +10,6 @@ const FeaturesSection = () => {
 
   const featuresSectionRef = useRef<HTMLDivElement>(null);
 
-  // const [isMounted, setIsMounted] = useState(false);
-
-  // useEffect(() => {
-  //   setIsMounted(true);
-  // }, []);
-
-  // isMounted && window.scrollTo(0, (featuresSectionRef.current.offsetTop = 55));
-
-  // window.scrollTo(0,  {(featuresSectionRef.offsetTop = 55)});
-
   const featuresSectionItems = useMemo(
     () => [
       {
@@ -68,7 +58,9 @@ const FeaturesSection = () => {
           <p className={classes.descText}>
             {t("features-section:DESC_TEXT.PART_I")}{" "}
             <span className={classes.link}>
-              <Link href="/features">{t("features-section:LINK_TEXT")}</Link>
+              <Link href="/features">
+                <a>{t("features-section:LINK_TEXT")}</a>
+              </Link>
             </span>{" "}
             {t("features-section:DESC_TEXT.PART_II")}
           </p>

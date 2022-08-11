@@ -1,10 +1,17 @@
-import React, { memo, useMemo } from "react";
+import React, { memo, useMemo, useEffect } from "react";
 import classes from "./FeaturesPage.module.scss";
 import { useTranslation } from "next-i18next";
 import { FeatureCard, FeaturesHeader } from "@components";
 
 const FeaturesPage = () => {
   const { t } = useTranslation();
+
+  useEffect(() => {
+    const onTop = () => {
+      window.scrollTo(0, 0);
+    };
+    onTop();
+  });
 
   const featuresPageItems = useMemo(
     () => [

@@ -1,22 +1,27 @@
 .wrapper {
-	@apply mt-8 flex flex-col gap-y-12 lg:flex-row;
+	@apply min-h-[calc(100vh_-_365px)];
+}
+
+.editor {
+	@apply mt-8 flex flex-col gap-y-12 lg:flex-row ;
 }
 
 .beforeWrap,
 .afterWrap {
 	@apply border-2 border-gray-light-shade rounded-2xl p-6 pb-3;
-	@apply w-full min-h-[23.5rem]  flex flex-col items-end gap-4;
+	@apply w-full min-h-[23.5rem] lg:min-h-[18rem] flex flex-col items-end gap-4;
 }
 
 .beforeWrap {
-	@apply lg:border-l-0 lg:rounded-l-none;
+	@apply rtl:lg:border-l-0 rtl:lg:rounded-l-none ltr:lg:border-r-0 ltr:lg:rounded-r-none;
 }
 
 .afterWrap {
-	@apply lg:rounded-r-none;
+	@apply rtl:lg:rounded-r-none ltr:lg:rounded-l-none;
 }
 
 .before,
 .after {
-	@apply w-full min-h-[17.5rem] outline-none px-2 text-3.5 lg:text-4;
+	@apply w-full min-h-[17.5rem] lg:min-h-[12rem] outline-none px-2 text-3.5 lg:text-4;
+	@apply dark:bg-gray-dark  resize-none;
 }
