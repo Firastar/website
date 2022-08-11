@@ -6,7 +6,7 @@ import clsx from "clsx";
 interface ButtonProps {
   text: string;
   children?: React.ReactNode;
-  variant: string;
+  variant?: string;
   className?: string;
 }
 
