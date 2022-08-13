@@ -16,7 +16,7 @@ const Home: Page = () => {
       <CompareSlider />
       <FeaturesSection />
       <AboutUs />
-      <FirastarUX />
+      {/* <FirastarUX /> */}
     </>
   );
 };

@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useMemo, useRef, useState } from "react";
+import React, { memo, useMemo, useRef } from "react";
 import classes from "./FeaturesSection.module.scss";
 import { FeatureCard } from "@components";
 import { useTranslation } from "next-i18next";

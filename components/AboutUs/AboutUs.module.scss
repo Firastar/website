@@ -1,10 +1,9 @@
 .wrapper {
-	@apply lg:min-h-[calc(100vh_-_118px)] bg-[url("/images/about-us-light.jpg")];
+	@apply lg:min-h-[calc(100vh_-_118px)] bg-[url("/images/about-us-light.jpg")] max-h-[62.5rem];
 	@apply dark:bg-[url("/images/about-us-dark.jpg")] -mx-[2.1875rem] lg:-mx-[4.375rem];
-	@apply px-[2.9375rem] py-16 lg:px-[6.5rem] lg:py-[8rem] scroll-m-16 lg:scroll-m-[7.5rem];
+	@apply px-[2.9375rem] py-16 lg:px-[6.5rem] lg:py-[8rem] scroll-m-16 lg:scroll-m-[7.3rem];
 }
 
-// lg:min-h-[calc(100vh_-_118px)]
 .title {
 	@apply text-5 lg:text-8 font-bold text-black-ultra dark:text-white mb-2 lg:mb-6 mr-2;
 }

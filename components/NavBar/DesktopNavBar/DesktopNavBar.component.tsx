@@ -1,12 +1,13 @@
 import React, { memo, useEffect, useState } from "react";
 import classes from "./DesktopNavBar.module.scss";
-import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import Image from "next/image";
 import Link from "next/link";
 import { ThemeSwitcher, LangSwitcher } from "@components";
 import clsx from "clsx";
+import { useRouter } from "next/router";
+import { useScrollSpy } from "@hooks";
 
 interface DesktopNavBarProps {
   routes: {
@@ -20,13 +21,34 @@ const DesktopNavBar = ({ routes }: DesktopNavBarProps) => {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
-  const router = useRouter();
   const { t } = useTranslation();
+  const router = useRouter();
 
   // to display shadow when home page is scrolled
   const [displayShadow, setDisplayShadow] = useState(false);
   useScrollPosition(({ currPos }) => {
     setDisplayShadow(currPos.y < 0);
+  });
+
+  // to active menu item when page is scrolled
+  const activeId = useScrollSpy(
+    ["", "features", "about-us", "contact-us"],
+    118
+  );
+
+  // check if body is scrolled to the bottom
+  const [isScrolled, setIsScrolled] = useState(false);
+  useEffect(() => {
+    window.onscroll = () => {
+      if (
+        window.innerHeight + window.pageYOffset >=
+        document.body.offsetHeight - 2
+      ) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
   });
 
   return (
@@ -42,7 +64,20 @@ const DesktopNavBar = ({ routes }: DesktopNavBarProps) => {
               <Link href={route.path} key={route.id}>
                 <a
                   className={
-                    router.asPath === route.path ? classes.activeItem : ""
+                    (!isScrolled && route.path === "/#" + activeId) ||
+                    (!isScrolled &&
+                      route.path === "/" + activeId &&
+                      router.pathname === "/") ||
+                    (isScrolled &&
+                      route.path === "/#contact-us" &&
+                      router.pathname === "/") ||
+                    (router.pathname === route.path &&
+                      router.pathname !== "/") ||
+                    (router.pathname ===
+                      route.path.slice(0, 1) + route.path.slice(2) &&
+                      router.pathname !== "/")
+                      ? classes.activeItem
+                      : ""
                   }>
                   {route.title}
                 </a>
