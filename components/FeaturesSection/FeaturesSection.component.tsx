@@ -1,8 +1,8 @@
 import React, { memo, useMemo } from "react";
 import classes from "./FeaturesSection.module.scss";
 import { FeatureCard } from "@components";
+import { StudyingGirl } from "@svgs";
 import { useTranslation } from "next-i18next";
-import Image from "next/image";
 import Link from "next/link";
 
 const FeaturesSection = () => {
@@ -37,16 +37,8 @@ const FeaturesSection = () => {
   return (
     <div className={classes.wrapper}>
       <p className={classes.title}>{t("features-section:TITLE")}</p>
-      <div className={classes.leftCol}>
-        <div className={classes.imageContainer}>
-          <Image
-            src="/images/feature-vector-i.png"
-            alt="feature-vector-i"
-            layout="responsive"
-            width={547}
-            height={524}
-          />
-        </div>
+      <div className={classes.cols}>
+        <StudyingGirl className={classes.leftCol} />
         <div className={classes.rightCol}>
           <div className={classes.cardList}>
             {featuresSectionItems.map(item => (
