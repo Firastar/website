@@ -8,5 +8,5 @@
 .secondaryBtn {
 	@apply w-24 h-11 lg:w-28 lg:h-12 border text-white bg-primary px-4 py-2;
 	@apply border-primary rounded-lg font-semibold hover:shadow-md;
-	@apply transition duration-300 text-3.5 lg:text-4;
+	@apply transition duration-300 text-3.5 lg:text-4 active:bg-white active:text-primary;
 }

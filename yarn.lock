@@ -217,6 +217,11 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@firastar/firastar-js@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@firastar/firastar-js/-/firastar-js-0.1.2.tgz#96e75663807f7b1bd419dcb05c427b143faa716d"
+  integrity sha512-zEKQLkojVjQNdUU4moFw8bGner9vLz1zVelE3+dSsBNrgxA9zNQ1mV0rzxUgOyI9kxVvTC2yGNYXUbpLipRpWg==
+
 "@humanwhocodes/config-array@^0.9.2":
   version "0.9.5"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.9.5.tgz#2cbaf9a89460da24b5ca6531b8bbfc23e1df50c7"

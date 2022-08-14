@@ -6,20 +6,23 @@ import clsx from "clsx";
 interface ButtonProps {
   text: string;
   children?: React.ReactNode;
-  variant?: string;
+  variant?: "primary" | "secondary";
   className?: string;
+  clickHandler: (e: React.MouseEvent<HTMLElement>) => void;
 }
 
 const Button = ({
   text,
   children,
-  variant = "main",
+  variant = "primary",
   className,
+  clickHandler,
 }: ButtonProps) => {
   return (
     <button
+      onClick={clickHandler}
       className={clsx(
-        variant === "main" && classes.mainBtn,
+        variant === "primary" && classes.mainBtn,
         variant === "secondary" && classes.secondaryBtn,
         className
       )}>
