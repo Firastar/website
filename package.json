@@ -21,7 +21,7 @@
     "animate.css": "^4.1.1",
     "autosize": "^5.0.1",
     "clsx": "^1.1.1",
-    "next": "12.1.5",
+    "next": "^12.2.5",
     "next-i18next": "^11.0.0",
     "next-themes": "^0.1.1",
     "nextjs-progressbar": "^0.0.14",
@@ -29,7 +29,8 @@
     "react-compare-slider": "^2.2.0",
     "react-dom": "18.0.0",
     "react-stars": "^2.2.5",
-    "react-toggle": "^4.1.2"
+    "react-toggle": "^4.1.2",
+    "sharp": "^0.30.7"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.2.3",

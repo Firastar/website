@@ -3,7 +3,7 @@ import {
   AboutUs,
   CompareSlider,
   FeaturesSection,
-  FirastarUX,
+  // FirastarUX,
 } from "@components";
 import { GetStaticProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
