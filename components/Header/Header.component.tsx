@@ -14,7 +14,7 @@ const Header = () => {
   const { lg } = useWindowSize();
 
   return (
-    <div className={classes.wrapper}>
+    <div id="home" className={classes.wrapper}>
       <div className={classes.cols}>
         <div className={classes.rightCol}>
           <div className={classes.title}>
@@ -43,7 +43,8 @@ const Header = () => {
             lg
               ? t("BUTTON_LABEL_CHROME_DESKTOP")
               : t("BUTTON_LABEL_CHROME_Mobile")
-          }>
+          }
+          clickHandler={() => null}>
           <Chrome className="w-[20px] h-[20px] lg:w-[40px] lg:h-[40px]" />
         </Button>
         <Button
@@ -51,7 +52,8 @@ const Header = () => {
             lg
               ? t("BUTTON_LABEL_Firefox_DESKTOP")
               : t("BUTTON_LABEL_Firefox_Mobile")
-          }>
+          }
+          clickHandler={() => null}>
           <Firefox className="w-[20px] h-[20px] lg:w-[40px] lg:h-[40px]" />
         </Button>
       </div>

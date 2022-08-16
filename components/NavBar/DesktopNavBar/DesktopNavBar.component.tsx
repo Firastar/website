@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useState } from "react";
+import React, { memo, useEffect, useRef, useState } from "react";
 import classes from "./DesktopNavBar.module.scss";
 import { useTranslation } from "next-i18next";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
@@ -14,6 +14,7 @@ interface DesktopNavBarProps {
     id: number;
     title: string;
     path: string;
+    anchor: string;
   }[];
 }
 
@@ -32,7 +33,7 @@ const DesktopNavBar = ({ routes }: DesktopNavBarProps) => {
 
   // to active menu item when page is scrolled
   const activeId = useScrollSpy(
-    ["", "features", "about-us", "contact-us"],
+    ["home", "features", "about-us", "contact-us"],
     118
   );
 
@@ -51,6 +52,55 @@ const DesktopNavBar = ({ routes }: DesktopNavBarProps) => {
     };
   });
 
+  const scrollSmoothly = (
+    // event: React.MouseEvent<, MouseEvent>,
+    route: {
+      id: number;
+      title: string;
+      path: string;
+      anchor: string;
+    }
+  ) => {
+    // event.preventDefault();
+    console.log("1111");
+    if (router.pathname !== route.path) {
+      console.log("2222");
+
+      setTimeout(() => scrollSmoothly(route), 3000);
+    } else if (
+      route.anchor
+      // route.path.slice(1).startsWith("#") &&
+      // router.pathname === "/"
+    ) {
+      console.log("3333");
+
+      const anchor = document.querySelector(route.anchor) as HTMLElement;
+
+      if (anchor !== null) {
+        const offsetTop = anchor.offsetTop - 117;
+
+        scroll({
+          top: offsetTop,
+          behavior: "smooth",
+        });
+      }
+    }
+  };
+
+  // event.preventDefault();
+
+  // const anchor = document.querySelector(route.path.slice(1)) as HTMLElement;
+  // let offsetTop;
+
+  // if (anchor !== null) {
+  //   offsetTop = anchor.offsetTop - 117;
+  // }
+
+  // scroll({
+  //   top: offsetTop,
+  //   behavior: "smooth",
+  // });
+
   return (
     <div className={clsx(classes.wrapper, displayShadow && "shadow-md")}>
       <div className={classes.firastarLogoTitle}>
@@ -61,8 +111,9 @@ const DesktopNavBar = ({ routes }: DesktopNavBarProps) => {
         {routes.map(route => {
           return (
             mounted && (
-              <Link href={route.path} key={route.id}>
-                <a
+              <Link href={route.path} key={route.id} passHref>
+                <span
+                  onClick={() => scrollSmoothly(route)}
                   className={
                     (!isScrolled && route.path === "/#" + activeId) ||
                     (!isScrolled &&
@@ -80,7 +131,7 @@ const DesktopNavBar = ({ routes }: DesktopNavBarProps) => {
                       : ""
                   }>
                   {route.title}
-                </a>
+                </span>
               </Link>
             )
           );
