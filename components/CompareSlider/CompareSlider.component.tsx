@@ -26,8 +26,9 @@ const CompareSlider = () => {
           itemOne={
             <Image
               src="/images/decorative-pic.jpg"
-              width={1000}
-              height={1000}
+              width={800}
+              height={800}
+              loading={"eager"}
               alt="Image-one"
               style={{
                 filter: locale === "fa" ? "grayscale(0)" : "grayscale(1)",
@@ -41,8 +42,9 @@ const CompareSlider = () => {
             <Image
               src="/images/decorative-pic.jpg"
               alt="Image-two"
-              width={1000}
-              height={1000}
+              width={800}
+              height={800}
+              loading={"eager"}
               style={{
                 filter: locale === "fa" ? "grayscale(1)" : "grayscale(0)",
                 width: "100%",
@@ -72,8 +74,9 @@ const CompareSlider = () => {
             <Image
               src="/images/decorative-pic2.jpg"
               alt="Image-one"
-              width={800}
-              height={800}
+              width={500}
+              height={500}
+              loading={"eager"}
               style={{
                 filter: "grayscale(1)",
                 width: "100%",
@@ -86,8 +89,9 @@ const CompareSlider = () => {
             <Image
               src="/images/decorative-pic2.jpg"
               alt="Image-two"
-              width={800}
-              height={800}
+              width={500}
+              height={500}
+              loading={"eager"}
               style={{
                 filter: "grayscale(0)",
                 width: "100%",
