@@ -53,11 +53,11 @@ const DesktopNavBar = ({ routes }: DesktopNavBarProps) => {
         activeId
       ) {
         latestSelectedRoute.current = "#" + activeId;
-        setSelectedRoute("#" + activeId);
+        setSelectedRouteThrottle("#" + activeId);
       }
     }, 300);
     return () => clearInterval(intervalId);
-  }, [activeId, router.pathname]);
+  }, [activeId, router.pathname, setSelectedRouteThrottle]);
 
   useEffect(() => {
     const listener = () => {
