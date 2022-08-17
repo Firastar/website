@@ -8,7 +8,7 @@ import { ThemeSwitcher, LangSwitcher } from "@components";
 import clsx from "clsx";
 import { useRouter } from "next/router";
 import { useScrollSpy } from "@hooks";
-
+import useThrottle from "@hooks/useThrottle.hook";
 interface DesktopNavBarProps {
   routes: {
     id: number;
@@ -25,6 +25,13 @@ const DesktopNavBar = ({ routes }: DesktopNavBarProps) => {
   const { t } = useTranslation();
   const router = useRouter();
 
+  // final selected navbar item
+  const [selectedRoute, setSelectedRoute] = useState("#home");
+  const setSelectedRouteThrottle = useThrottle(setSelectedRoute, 500);
+  const scrollLockFlag = useRef(false);
+  const latestSelectedRoute = useRef("#home");
+  const scrollSpyLockFlag = useRef(false);
+
   // to display shadow when home page is scrolled
   const [displayShadow, setDisplayShadow] = useState(false);
   useScrollPosition(({ currPos }) => {
@@ -37,69 +44,77 @@ const DesktopNavBar = ({ routes }: DesktopNavBarProps) => {
     118
   );
 
-  // check if body is scrolled to the bottom
-  const [isScrolled, setIsScrolled] = useState(false);
   useEffect(() => {
-    window.onscroll = () => {
+    const intervalId = setInterval(() => {
       if (
-        window.innerHeight + window.pageYOffset >=
-        document.body.offsetHeight - 2
+        !scrollSpyLockFlag.current &&
+        !scrollLockFlag.current &&
+        router.pathname === "/" &&
+        activeId
       ) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
+        latestSelectedRoute.current = "#" + activeId;
+        setSelectedRoute("#" + activeId);
       }
+    }, 300);
+    return () => clearInterval(intervalId);
+  }, [activeId, router.pathname]);
+
+  useEffect(() => {
+    const listener = () => {
+      if (!scrollLockFlag.current) scrollSpyLockFlag.current = false;
     };
-  });
+
+    window.addEventListener("resize", listener);
+    window.addEventListener("scroll", listener);
+
+    return () => {
+      window.removeEventListener("resize", listener);
+      window.removeEventListener("scroll", listener);
+    };
+  }, []);
 
   const scrollSmoothly = (
-    // event: React.MouseEvent<, MouseEvent>,
+    event: null | React.MouseEvent,
     route: {
       id: number;
       title: string;
       path: string;
       anchor: string;
-    }
+    },
+    callCounter = 0
   ) => {
-    // event.preventDefault();
-    console.log("1111");
-    if (router.pathname !== route.path) {
-      console.log("2222");
-
-      setTimeout(() => scrollSmoothly(route), 3000);
-    } else if (
-      route.anchor
-      // route.path.slice(1).startsWith("#") &&
-      // router.pathname === "/"
-    ) {
-      console.log("3333");
+    if (callCounter < 1 && router.pathname !== route.path) {
+      scrollLockFlag.current = true;
+      scrollSpyLockFlag.current = true;
+      latestSelectedRoute.current = route.anchor;
+      setSelectedRoute(route.anchor);
+      setSelectedRouteThrottle(route.anchor);
+      setTimeout(() => scrollSmoothly(null, route, 1 + callCounter), 500);
+    } else if (route.anchor && callCounter < 2) {
+      event?.preventDefault();
 
       const anchor = document.querySelector(route.anchor) as HTMLElement;
 
       if (anchor !== null) {
         const offsetTop = anchor.offsetTop - 117;
+        scrollSpyLockFlag.current = true;
+        scrollLockFlag.current = true;
+        latestSelectedRoute.current = route.anchor;
+        setSelectedRoute(route.anchor);
+        setSelectedRouteThrottle(route.anchor);
 
         scroll({
           top: offsetTop,
           behavior: "smooth",
         });
+
+        setTimeout(() => {
+          if (latestSelectedRoute.current === route.anchor)
+            scrollLockFlag.current = false;
+        }, 1500);
       }
     }
   };
-
-  // event.preventDefault();
-
-  // const anchor = document.querySelector(route.path.slice(1)) as HTMLElement;
-  // let offsetTop;
-
-  // if (anchor !== null) {
-  //   offsetTop = anchor.offsetTop - 117;
-  // }
-
-  // scroll({
-  //   top: offsetTop,
-  //   behavior: "smooth",
-  // });
 
   return (
     <div className={clsx(classes.wrapper, displayShadow && "shadow-md")}>
@@ -111,27 +126,18 @@ const DesktopNavBar = ({ routes }: DesktopNavBarProps) => {
         {routes.map(route => {
           return (
             mounted && (
-              <Link href={route.path} key={route.id} passHref>
-                <span
-                  onClick={() => scrollSmoothly(route)}
+              <Link href={route.path} key={route.id}>
+                <a
+                  onClick={e => scrollSmoothly(e, route)}
                   className={
-                    (!isScrolled && route.path === "/#" + activeId) ||
-                    (!isScrolled &&
-                      route.path === "/" + activeId &&
-                      router.pathname === "/") ||
-                    (isScrolled &&
-                      route.path === "/#contact-us" &&
-                      router.pathname === "/") ||
-                    (router.pathname === route.path &&
-                      router.pathname !== "/") ||
-                    (router.pathname ===
-                      route.path.slice(0, 1) + route.path.slice(2) &&
-                      router.pathname !== "/")
+                    (route.anchor === selectedRoute &&
+                      router.pathname === route.path) ||
+                    (router.pathname === route.path && router.pathname !== "/")
                       ? classes.activeItem
                       : ""
                   }>
                   {route.title}
-                </span>
+                </a>
               </Link>
             )
           );
