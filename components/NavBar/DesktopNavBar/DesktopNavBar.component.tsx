@@ -1,36 +1,32 @@
 import React, { memo, useEffect, useRef, useState } from "react";
 import classes from "./DesktopNavBar.module.scss";
-import { useTranslation } from "next-i18next";
-import { useScrollPosition } from "@n8tb1t/use-scroll-position";
+import { ThemeSwitcher, LangSwitcher } from "@components";
+import { useScrollSpy, useThrottle } from "@hooks";
+
 import Image from "next/image";
 import Link from "next/link";
-import { ThemeSwitcher, LangSwitcher } from "@components";
-import clsx from "clsx";
 import { useRouter } from "next/router";
-import { useScrollSpy } from "@hooks";
-import useThrottle from "@hooks/useThrottle.hook";
+
+import clsx from "clsx";
+import { useTranslation } from "next-i18next";
+import { useScrollPosition } from "@n8tb1t/use-scroll-position";
+
 interface DesktopNavBarProps {
   routes: {
     id: number;
     title: string;
     path: string;
-    anchor: string;
+    hashId: string;
   }[];
 }
 
 const DesktopNavBar = ({ routes }: DesktopNavBarProps) => {
+  // check if links are mounted
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
   const { t } = useTranslation();
   const router = useRouter();
-
-  // final selected navbar item
-  const [selectedRoute, setSelectedRoute] = useState("#home");
-  const setSelectedRouteThrottle = useThrottle(setSelectedRoute, 500);
-  const scrollLockFlag = useRef(false);
-  const latestSelectedRoute = useRef("#home");
-  const scrollSpyLockFlag = useRef(false);
 
   // to display shadow when home page is scrolled
   const [displayShadow, setDisplayShadow] = useState(false);
@@ -44,6 +40,18 @@ const DesktopNavBar = ({ routes }: DesktopNavBarProps) => {
     118
   );
 
+  //  the final selected item
+  const [selectedRoute, setSelectedRoute] = useState("#home");
+  const setSelectedRouteThrottle = useThrottle(setSelectedRoute, 500);
+  const latestSelectedRoute = useRef("#home");
+
+  // check if the page is scrolling
+  const scrollLockFlag = useRef(false);
+
+  // check if scrolling is over
+  const scrollSpyLockFlag = useRef(false);
+
+  // set selected route if the conditions are met
   useEffect(() => {
     const intervalId = setInterval(() => {
       if (
@@ -56,9 +64,11 @@ const DesktopNavBar = ({ routes }: DesktopNavBarProps) => {
         setSelectedRouteThrottle("#" + activeId);
       }
     }, 300);
+
     return () => clearInterval(intervalId);
   }, [activeId, router.pathname, setSelectedRouteThrottle]);
 
+  // set scrollSpyLockFlag to be false when scrollLockFlag is false
   useEffect(() => {
     const listener = () => {
       if (!scrollLockFlag.current) scrollSpyLockFlag.current = false;
@@ -79,29 +89,32 @@ const DesktopNavBar = ({ routes }: DesktopNavBarProps) => {
       id: number;
       title: string;
       path: string;
-      anchor: string;
+      hashId: string;
     },
     callCounter = 0
   ) => {
     if (callCounter < 1 && router.pathname !== route.path) {
+      console.log(router.pathname, route.path, route.hashId);
       scrollLockFlag.current = true;
       scrollSpyLockFlag.current = true;
-      latestSelectedRoute.current = route.anchor;
-      setSelectedRoute(route.anchor);
-      setSelectedRouteThrottle(route.anchor);
+      latestSelectedRoute.current = route.hashId;
+      setSelectedRoute(route.hashId);
+      setSelectedRouteThrottle(route.hashId);
       setTimeout(() => scrollSmoothly(null, route, 1 + callCounter), 500);
-    } else if (route.anchor && callCounter < 2) {
+    } else if (route.hashId && callCounter < 2) {
       event?.preventDefault();
 
-      const anchor = document.querySelector(route.anchor) as HTMLElement;
+      const elementWithHashId = document.querySelector(
+        route.hashId
+      ) as HTMLElement;
 
-      if (anchor !== null) {
-        const offsetTop = anchor.offsetTop - 117;
+      if (elementWithHashId !== null) {
+        const offsetTop = elementWithHashId.offsetTop - 117;
         scrollSpyLockFlag.current = true;
         scrollLockFlag.current = true;
-        latestSelectedRoute.current = route.anchor;
-        setSelectedRoute(route.anchor);
-        setSelectedRouteThrottle(route.anchor);
+        latestSelectedRoute.current = route.hashId;
+        setSelectedRoute(route.hashId);
+        setSelectedRouteThrottle(route.hashId);
 
         scroll({
           top: offsetTop,
@@ -109,7 +122,7 @@ const DesktopNavBar = ({ routes }: DesktopNavBarProps) => {
         });
 
         setTimeout(() => {
-          if (latestSelectedRoute.current === route.anchor)
+          if (latestSelectedRoute.current === route.hashId)
             scrollLockFlag.current = false;
         }, 1500);
       }
@@ -130,7 +143,7 @@ const DesktopNavBar = ({ routes }: DesktopNavBarProps) => {
                 <a
                   onClick={e => scrollSmoothly(e, route)}
                   className={
-                    (route.anchor === selectedRoute &&
+                    (route.hashId === selectedRoute &&
                       router.pathname === route.path) ||
                     (router.pathname === route.path && router.pathname !== "/")
                       ? classes.activeItem

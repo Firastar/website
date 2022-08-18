@@ -1,7 +1,8 @@
 .wrapper {
-	@apply lg:min-h-[calc(100vh_-_118px)] bg-[url("/images/about-us-light.jpg")] max-h-[62.5rem];
-	@apply dark:bg-[url("/images/about-us-dark.jpg")] -mx-[2.1875rem] lg:-mx-[4.375rem];
-	@apply px-[2.9375rem] py-16 lg:px-[6.5rem] lg:py-[8rem] scroll-m-16 lg:scroll-m-[7.3rem];
+	@apply min-h-[580px] lg:min-h-[calc(100vh_-_118px)] max-h-[62.5rem];
+	@apply dark:bg-[url("/images/about-us-dark.jpg")] bg-[url("/images/about-us-light.jpg")];
+	@apply -mx-[2.1875rem] lg:-mx-[4.375rem] px-[2.9375rem] lg:px-[6.5rem];
+	@apply flex flex-col justify-center items-start;
 }
 
 .title {
@@ -9,5 +10,5 @@
 }
 
 .text {
-	@apply text-3.5 lg:text-4.5 font-normal text-sonic-silver dark:text-white lg:leading-8;
+	@apply text-3.5 lg:text-4 font-normal text-sonic-silver dark:text-white lg:leading-8;
 }
