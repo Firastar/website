@@ -8,7 +8,7 @@ interface ButtonProps {
   children?: React.ReactNode;
   variant?: "primary" | "secondary";
   className?: string;
-  clickHandler: (e: React.MouseEvent<HTMLElement>) => void;
+  clickHandler?: (e: React.MouseEvent<HTMLElement>) => void;
 }
 
 const Button = ({
