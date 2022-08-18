@@ -11,6 +11,11 @@ const moduleExports = {
   // Your existing module.exports
   i18n,
   reactStrictMode: true,
+  experimental: {
+    images: {
+      allowFutureImage: true,
+    },
+  },
   // active dark: in tailwind
   webpack: config => {
     // Find the base rule that contains nested rules (which contains css-loader)
