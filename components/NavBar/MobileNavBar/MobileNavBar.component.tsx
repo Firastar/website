@@ -12,6 +12,7 @@ interface MobileNavBarProps {
     id: number;
     title: string;
     path: string;
+    hashId: string;
   }[];
 }
 
