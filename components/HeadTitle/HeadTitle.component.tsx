@@ -14,6 +14,7 @@ const HeadTitle = ({ ns }: HeadTitle) => {
       <title>
         {t("common:HEAD_TITLE.PREFIX") + " | " + t(ns + ":HEAD_TITLE")}
       </title>
+      <meta name="description" content={t(ns + ":HEAD_DESCRIPTION")}></meta>
     </Head>
   );
 };

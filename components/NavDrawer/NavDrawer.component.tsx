@@ -2,7 +2,7 @@ import React, { memo, useEffect, useRef, useState } from "react";
 import classes from "./NavDrawer.module.scss";
 import { useLockBodyScroll, useScrollSpy, useThrottle } from "@hooks";
 import { ThemeSwitcher } from "@components";
-import { RightArrow, Phone, Email, LeftArrow } from "@svgs";
+import { RightArrow, Email, LeftArrow } from "@svgs";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -188,13 +188,13 @@ const NavDrawer = ({ showDrawer, setShowDrawer, routes }: NavDrawerProps) => {
           })}
         </div>
         <div className={classes.contactInfo}>
-          <div className={classes.phone}>
+          {/* <div className={classes.phone}>
             <Phone width={16} height={16} />
             <p>{t("PHONE_NUMBER")}</p>
-          </div>
+          </div> */}
           <div className={classes.email}>
             <Email width={16} height={16} />
-            <p>mohsen.firastar@gmail.com</p>
+            <p>firastar.team@gmail.com</p>
           </div>
         </div>
       </div>

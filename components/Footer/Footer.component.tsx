@@ -1,9 +1,7 @@
 import React, { memo } from "react";
 import classes from "./Footer.module.scss";
 import { useTranslation } from "next-i18next";
-import Link from "next/link";
 import {
-  Phone,
   Email,
   UkraineFlag,
   Discord,
@@ -18,13 +16,13 @@ const Footer = () => {
   return (
     <div id="contact-us" className={classes.wrapper}>
       <div className={classes.contactInfo}>
-        <div className={classes.phone}>
+        {/* <div className={classes.phone}>
           <Phone />
           <p>{t("PHONE_NUMBER")}</p>
-        </div>
+        </div> */}
         <div className={classes.email}>
           <Email />
-          <p>mohsen.firastar@gmail.com</p>
+          <p>firastar.team@gmail.com</p>
         </div>
       </div>
       <div className={classes.statement}>
@@ -32,26 +30,24 @@ const Footer = () => {
         {t("STATEMENT")}
       </div>
       <div className={classes.socialMedia}>
-        <Link href="/">
-          <a>
-            <Instagram />
-          </a>
-        </Link>
-        <Link href="/">
-          <a>
-            <Discord />
-          </a>
-        </Link>
-        <Link href="/">
-          <a>
-            <Linkedin />
-          </a>
-        </Link>
-        <Link href="/">
-          <a>
-            <Github />
-          </a>
-        </Link>
+        <a
+          href="https://instagram.com/firastar.ir"
+          target="_blank"
+          rel="noreferrer">
+          <Instagram />
+        </a>
+        <a href="https://discord.gg/ceQx9dSh" target="_blank" rel="noreferrer">
+          <Discord />
+        </a>
+        <a
+          href="https://www.linkedin.com/company/firastar"
+          target="_blank"
+          rel="noreferrer">
+          <Linkedin />
+        </a>
+        <a href="https://github.com/Firastar" target="_blank" rel="noreferrer">
+          <Github />
+        </a>
       </div>
     </div>
   );

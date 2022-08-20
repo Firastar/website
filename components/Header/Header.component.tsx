@@ -44,7 +44,12 @@ const Header = () => {
               ? t("BUTTON_LABEL_CHROME_DESKTOP")
               : t("BUTTON_LABEL_CHROME_Mobile")
           }
-          clickHandler={() => null}>
+          clickHandler={() =>
+            open(
+              "https://chrome.google.com/webstore/detail/firastar/mjdhioapnehcmilfadnoaolkmpidehdb",
+              "_blank"
+            )
+          }>
           <Chrome className="w-[20px] h-[20px] lg:w-[40px] lg:h-[40px]" />
         </Button>
         <Button
@@ -53,7 +58,12 @@ const Header = () => {
               ? t("BUTTON_LABEL_Firefox_DESKTOP")
               : t("BUTTON_LABEL_Firefox_Mobile")
           }
-          clickHandler={() => null}>
+          clickHandler={() =>
+            open(
+              "https://addons.mozilla.org/en-US/firefox/addon/firastar-app/",
+              ""
+            )
+          }>
           <Firefox className="w-[20px] h-[20px] lg:w-[40px] lg:h-[40px]" />
         </Button>
       </div>

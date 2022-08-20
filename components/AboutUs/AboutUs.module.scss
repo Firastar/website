@@ -10,5 +10,5 @@
 }
 
 .text {
-	@apply text-3.5 lg:text-4 font-normal text-sonic-silver dark:text-white lg:leading-8;
+	@apply text-3.5 lg:text-4 font-normal text-sonic-silver dark:text-white lg:leading-8 whitespace-pre-line;
 }
