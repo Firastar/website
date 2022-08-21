@@ -63,7 +63,6 @@ const OnlineEditor = () => {
           <textarea
             id="after"
             ref={afterRef}
-            placeholder={t("PLACEHOLDER")}
             className={classes.after}
             value={textAfter}
             dir="rtl"
