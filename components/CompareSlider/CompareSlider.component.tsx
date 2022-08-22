@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React, { memo, useEffect, useState } from "react";
 import classes from "./CompareSlider.module.scss";
 import { useTranslation } from "next-i18next";
 import { ReactCompareSlider, styleFitContainer } from "react-compare-slider";
@@ -8,6 +8,10 @@ import { useTheme } from "next-themes";
 
 const CompareSlider = () => {
   const { theme } = useTheme();
+  const [isThemeMounted, setIsThemeMounted] = useState(false);
+  useEffect(() => {
+    theme ? setIsThemeMounted(true) : null;
+  }, [theme]);
   const { t } = useTranslation("slider");
 
   return (
@@ -24,42 +28,76 @@ const CompareSlider = () => {
             </div>
           }
           itemOne={
-            <Image
-              src={
-                (theme || "light") === "light"
-                  ? require("../../public/images/after-light.webp")
-                  : require("../../public/images/after-dark.webp")
-              }
-              width={2000}
-              height={2000}
-              quality="100%"
-              loading={"eager"}
-              alt="Image-one"
-              style={{
-                width: "100%",
-                height: "auto",
-                ...styleFitContainer(),
-              }}
-            />
+            <>
+              <Image
+                src={"/images/after-light.webp"}
+                width={2000}
+                height={2000}
+                quality="100%"
+                priority
+                loading={"eager"}
+                alt="Image-one"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  ...styleFitContainer(),
+                  display:
+                    theme === "dark" || !isThemeMounted ? "none" : "inherit",
+                }}
+              />
+              <Image
+                src={"/images/after-dark.webp"}
+                width={2000}
+                height={2000}
+                quality="100%"
+                priority
+                loading={"eager"}
+                alt="Image-one"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  ...styleFitContainer(),
+                  display:
+                    theme === "light" || !isThemeMounted ? "none" : "inherit",
+                }}
+              />
+            </>
           }
           itemTwo={
-            <Image
-              src={
-                (theme || "light") === "light"
-                  ? require("../../public/images/before-light.webp")
-                  : require("../../public/images/before-dark.webp")
-              }
-              quality="100%"
-              alt="Image-two"
-              width={2000}
-              height={2000}
-              loading={"eager"}
-              style={{
-                width: "100%",
-                height: "auto",
-                ...styleFitContainer(),
-              }}
-            />
+            <>
+              <Image
+                src={"/images/before-light.webp"}
+                width={2000}
+                height={2000}
+                quality="100%"
+                priority
+                loading={"eager"}
+                alt="Image-one"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  ...styleFitContainer(),
+                  display:
+                    theme === "dark" || !isThemeMounted ? "none" : "inherit",
+                }}
+              />
+              <Image
+                src={"/images/before-dark.webp"}
+                width={2000}
+                height={2000}
+                quality="100%"
+                priority
+                loading={"eager"}
+                alt="Image-one"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  ...styleFitContainer(),
+                  display:
+                    theme === "light" || !isThemeMounted ? "none" : "inherit",
+                }}
+              />
+            </>
           }
           position={50}
           style={{
@@ -79,42 +117,72 @@ const CompareSlider = () => {
             </div>
           }
           itemOne={
-            <Image
-              src={
-                (theme || "light") === "light"
-                  ? require("../../public/images/after-light-mobile.webp")
-                  : require("../../public/images/after-dark-mobile.webp")
-              }
-              quality="100%"
-              alt="Image-one"
-              width={500}
-              height={500}
-              loading={"eager"}
-              style={{
-                width: "100%",
-                height: "auto",
-                ...styleFitContainer(),
-              }}
-            />
+            <>
+              <Image
+                src={"/images/after-dark-mobile.webp"}
+                priority
+                alt="Image-one"
+                width={500}
+                height={500}
+                loading={"eager"}
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  ...styleFitContainer(),
+                  display:
+                    theme === "light" || !isThemeMounted ? "none" : "inherit",
+                }}
+              />
+              <Image
+                src={"/images/after-light-mobile.webp"}
+                priority
+                alt="Image-one"
+                width={500}
+                height={500}
+                loading={"eager"}
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  ...styleFitContainer(),
+                  display:
+                    theme === "dark" || !isThemeMounted ? "none" : "inherit",
+                }}
+              />
+            </>
           }
           itemTwo={
-            <Image
-              src={
-                (theme || "light") === "light"
-                  ? require("../../public/images/before-light-mobile.webp")
-                  : require("../../public/images/before-dark-mobile.webp")
-              }
-              alt="Image-two"
-              quality="100%"
-              width={500}
-              height={500}
-              loading={"eager"}
-              style={{
-                width: "100%",
-                height: "auto",
-                ...styleFitContainer(),
-              }}
-            />
+            <>
+              <Image
+                src={"/images/before-dark-mobile.webp"}
+                alt="Image-two"
+                priority
+                width={500}
+                height={500}
+                loading={"eager"}
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  ...styleFitContainer(),
+                  display:
+                    theme === "light" || !isThemeMounted ? "none" : "inherit",
+                }}
+              />
+              <Image
+                src={"/images/before-light-mobile.webp"}
+                alt="Image-two"
+                priority
+                width={500}
+                height={500}
+                loading={"eager"}
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  ...styleFitContainer(),
+                  display:
+                    theme === "dark" || !isThemeMounted ? "none" : "inherit",
+                }}
+              />
+            </>
           }
           portrait
           position={50}

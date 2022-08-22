@@ -3,7 +3,7 @@ import classes from "./DesktopNavBar.module.scss";
 import { ThemeSwitcher, LangSwitcher } from "@components";
 import { useScrollSpy, useThrottle } from "@hooks";
 
-import Image from "next/image";
+import Image from "next/future/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -132,7 +132,14 @@ const DesktopNavBar = ({ routes }: DesktopNavBarProps) => {
   return (
     <div className={clsx(classes.wrapper, displayShadow && "shadow-md")}>
       <div className={classes.firastarLogoTitle}>
-        <Image src="/icons/logo.png" alt="logo" width={48} height={48} />
+        <Image
+          loading={"eager"}
+          src="/icons/logo.png"
+          quality={100}
+          alt="logo"
+          width={48}
+          height={48}
+        />
         <p>{t("common:MAIN_TITLE")}</p>
       </div>
       <div className={classes.menu}>
@@ -159,7 +166,7 @@ const DesktopNavBar = ({ routes }: DesktopNavBarProps) => {
         })}
       </div>
       <div className={classes.switchers}>
-        <LangSwitcher />
+        <LangSwitcher root="desktop" />
         <ThemeSwitcher mobileMode={false} />
       </div>
     </div>

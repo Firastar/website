@@ -28,6 +28,8 @@ const ThemeSwitcher = ({ mobileMode = false }: ThemeSwitcherProps) => {
       }}
       onChange={() => setTheme(theme === "light" ? "dark" : "light")}
       checked={theme === "dark" ? true : false}
+      aria-labelledby="toggle-theme"
+      aria-label="toggle-theme"
     />
   ) : null;
 };

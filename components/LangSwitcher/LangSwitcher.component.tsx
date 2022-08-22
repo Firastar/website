@@ -2,7 +2,11 @@ import React, { memo, useCallback, useEffect, useRef, useState } from "react";
 import { LangSwitchIcon } from "@svgs";
 import { LangPopup } from "@components";
 
-const LangSwitcher = () => {
+const LangSwitcher = ({
+  root = "desktop",
+}: {
+  root?: "desktop" | "mobile";
+}) => {
   const [popupDisplayConfig, setPopupDisplayConfig] = useState({
     visibility: false,
     animate: "",
@@ -52,6 +56,7 @@ const LangSwitcher = () => {
         popupDisplayConfig={popupDisplayConfig}
         setPopupDisplayConfig={setPopupDisplayConfig}
         closePopup={closePopup}
+        root={root}
       />
     </div>
   );

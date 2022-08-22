@@ -15,12 +15,14 @@ interface LangPopupProps {
     animate: string;
   }) => void;
   closePopup: () => void;
+  root?: "desktop" | "mobile";
 }
 
 const LangPopup = ({
   popupDisplayConfig,
   setPopupDisplayConfig,
   closePopup,
+  root = "desktop",
 }: LangPopupProps) => {
   const router = useRouter();
   const { t } = useTranslation("lang-popup");
@@ -77,7 +79,7 @@ const LangPopup = ({
         <input
           className={classes.radioButton}
           type="radio"
-          id="persian"
+          id={"persian" + root}
           name="lang"
           checked={router.locale === "fa"}
           onChange={() => {
@@ -85,7 +87,7 @@ const LangPopup = ({
             closePopup();
           }}
         />
-        <label htmlFor="persian" className={classes.label}>
+        <label htmlFor={"persian" + root} className={classes.label}>
           {t("PERSIAN")}
         </label>
       </div>
@@ -98,7 +100,7 @@ const LangPopup = ({
         <input
           className={classes.radioButton}
           type="radio"
-          id="english"
+          id={"english-" + root}
           name="lang"
           checked={router.locale === "en"}
           onChange={() => {
@@ -106,7 +108,7 @@ const LangPopup = ({
             closePopup();
           }}
         />
-        <label htmlFor="english" className={classes.label}>
+        <label htmlFor={"english-" + root} className={classes.label}>
           {t("ENGLISH")}
         </label>
       </div>

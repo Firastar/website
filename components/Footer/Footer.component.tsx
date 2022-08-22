@@ -31,21 +31,31 @@ const Footer = () => {
       </div>
       <div className={classes.socialMedia}>
         <a
+          aria-label="Instagram"
           href="https://instagram.com/firastar.ir"
           target="_blank"
           rel="noreferrer">
           <Instagram />
         </a>
-        <a href="https://discord.gg/ceQx9dSh" target="_blank" rel="noreferrer">
+        <a
+          aria-label="Discord"
+          href="https://discord.gg/ceQx9dSh"
+          target="_blank"
+          rel="noreferrer">
           <Discord />
         </a>
         <a
+          aria-label="Linkedin"
           href="https://www.linkedin.com/company/firastar"
           target="_blank"
           rel="noreferrer">
           <Linkedin />
         </a>
-        <a href="https://github.com/Firastar" target="_blank" rel="noreferrer">
+        <a
+          aria-label="Github"
+          href="https://github.com/Firastar"
+          target="_blank"
+          rel="noreferrer">
           <Github />
         </a>
       </div>

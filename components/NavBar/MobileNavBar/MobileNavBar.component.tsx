@@ -47,7 +47,7 @@ const MobileNavBar = ({ routes }: MobileNavBarProps) => {
         <p>{t("common:MAIN_TITLE")}</p>
       </div>
       <div className={classes.switcher}>
-        <LangSwitcher />
+        <LangSwitcher root="mobile" />
       </div>
     </div>
   );
