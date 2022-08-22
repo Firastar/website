@@ -23,7 +23,7 @@ const NavBar = () => {
         id: 3,
         title: t("menu-items:ONLINE_EDITING"),
         path: "/online-editing",
-        hashId: "",
+        hashId: "__",
       },
       {
         id: 4,

@@ -66,7 +66,7 @@ const OnlineEditor = () => {
             className={classes.after}
             value={textAfter}
             dir="rtl"
-            disabled
+            readOnly
           />
           <Button
             text={t("COPY_BUTTON")}

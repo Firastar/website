@@ -176,7 +176,8 @@ const NavDrawer = ({ showDrawer, setShowDrawer, routes }: NavDrawerProps) => {
                       (route.hashId === selectedRoute &&
                         router.pathname === route.path) ||
                       (router.pathname === route.path &&
-                        router.pathname !== "/")
+                        router.pathname !== "/") ||
+                      router.pathname === "/" + route.hashId.slice(1)
                         ? classes.activeItem
                         : ""
                     }>

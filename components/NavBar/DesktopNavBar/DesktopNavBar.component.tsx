@@ -94,7 +94,7 @@ const DesktopNavBar = ({ routes }: DesktopNavBarProps) => {
     callCounter = 0
   ) => {
     if (callCounter < 1 && router.pathname !== route.path) {
-      console.log(router.pathname, route.path, route.hashId);
+      // console.log(router.pathname, route.path, route.hashId);
       scrollLockFlag.current = true;
       scrollSpyLockFlag.current = true;
       latestSelectedRoute.current = route.hashId;
@@ -145,7 +145,9 @@ const DesktopNavBar = ({ routes }: DesktopNavBarProps) => {
                   className={
                     (route.hashId === selectedRoute &&
                       router.pathname === route.path) ||
-                    (router.pathname === route.path && router.pathname !== "/")
+                    (router.pathname === route.path &&
+                      router.pathname !== "/") ||
+                    router.pathname === "/" + route.hashId.slice(1)
                       ? classes.activeItem
                       : ""
                   }>
