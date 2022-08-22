@@ -5,7 +5,7 @@
 	<h1 align="center">Firastar</h1>
 	<p align="center">Write your best with Firastar on web.</p>
 
-![CI/CD](https://github.com/firastar/website/workflows/build/badge.svg)
+![CI/CD](https://github.com/firastar/website/workflows/test/badge.svg)
 ![Vercel](https://vercelbadge.vercel.app/api/firastar/website)
 [![CodeFactor](https://www.codefactor.io/repository/github/firastar/website/badge)](https://www.codefactor.io/repository/github/firastar/website)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/firastar/website/blob/master/LICENSE)

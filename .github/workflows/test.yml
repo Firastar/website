@@ -1,4 +1,4 @@
-name: build
+name: test
 
 on:
   push:
@@ -34,12 +34,3 @@ jobs:
 
       - name: Run the lints
         run: yarn lint
-
-      - name: Build
-        run: yarn build
-
-      - name: Archive production
-        uses: actions/upload-artifact@v3
-        with:
-          name: .next
-          path: .next
