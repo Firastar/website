@@ -1,20 +1,19 @@
-name: Node.js CI
+name: build
 
 on:
   push:
-    branches: [ "main", "develop" ]
+    branches: ["main", "develop"]
   pull_request:
-    branches: [ "main", "develop" ]
+    branches: ["main", "develop"]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
         node-version: [12.x, 14.x, 16.x]
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -22,14 +21,14 @@ jobs:
       - name: Set up Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
-            node-version: ${{ matrix.node-version }}
+          node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
         run: yarn install
-        
+
       - name: Run the prettier
         run: yarn prettier
-        
+
       - name: Run the style lints
         run: yarn stylelint
 
@@ -42,5 +41,5 @@ jobs:
       - name: Archive production
         uses: actions/upload-artifact@v3
         with:
-            name: .next
-            path: .next
+          name: .next
+          path: .next
