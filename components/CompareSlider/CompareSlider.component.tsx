@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useState } from "react";
+import React, { memo, useCallback, useEffect, useState } from "react";
 import classes from "./CompareSlider.module.scss";
 import { useTranslation } from "next-i18next";
 import { ReactCompareSlider, styleFitContainer } from "react-compare-slider";
@@ -13,6 +13,33 @@ const CompareSlider = () => {
     theme ? setIsThemeMounted(true) : null;
   }, [theme]);
   const { t } = useTranslation("slider");
+
+  const generateCompareImage = useCallback(
+    (
+      type: "desktop" | "mobile" = "desktop",
+      isAfter = true,
+      inTheme: "dark" | "light" = "light"
+    ) => {
+      return (
+        <Image
+          src={`/images/${isAfter ? "after" : "before"}-${inTheme}.webp`}
+          width={type === "desktop" ? 2000 : 500}
+          height={type === "desktop" ? 2000 : 500}
+          quality={type === "desktop" ? "100%" : undefined}
+          priority
+          loading={"eager"}
+          alt="Image-one"
+          style={{
+            width: "100%",
+            height: "auto",
+            ...styleFitContainer(),
+            display: theme !== inTheme || !isThemeMounted ? "none" : "inherit",
+          }}
+        />
+      );
+    },
+    [isThemeMounted, theme]
+  );
 
   return (
     <>
@@ -29,74 +56,14 @@ const CompareSlider = () => {
           }
           itemOne={
             <>
-              <Image
-                src={"/images/after-light.webp"}
-                width={2000}
-                height={2000}
-                quality="100%"
-                priority
-                loading={"eager"}
-                alt="Image-one"
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  ...styleFitContainer(),
-                  display:
-                    theme === "dark" || !isThemeMounted ? "none" : "inherit",
-                }}
-              />
-              <Image
-                src={"/images/after-dark.webp"}
-                width={2000}
-                height={2000}
-                quality="100%"
-                priority
-                loading={"eager"}
-                alt="Image-one"
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  ...styleFitContainer(),
-                  display:
-                    theme === "light" || !isThemeMounted ? "none" : "inherit",
-                }}
-              />
+              {generateCompareImage("desktop", true, "light")}
+              {generateCompareImage("desktop", true, "dark")}
             </>
           }
           itemTwo={
             <>
-              <Image
-                src={"/images/before-light.webp"}
-                width={2000}
-                height={2000}
-                quality="100%"
-                priority
-                loading={"eager"}
-                alt="Image-one"
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  ...styleFitContainer(),
-                  display:
-                    theme === "dark" || !isThemeMounted ? "none" : "inherit",
-                }}
-              />
-              <Image
-                src={"/images/before-dark.webp"}
-                width={2000}
-                height={2000}
-                quality="100%"
-                priority
-                loading={"eager"}
-                alt="Image-one"
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  ...styleFitContainer(),
-                  display:
-                    theme === "light" || !isThemeMounted ? "none" : "inherit",
-                }}
-              />
+              {generateCompareImage("desktop", false, "light")}
+              {generateCompareImage("desktop", false, "dark")}
             </>
           }
           position={50}
@@ -118,70 +85,14 @@ const CompareSlider = () => {
           }
           itemOne={
             <>
-              <Image
-                src={"/images/after-dark-mobile.webp"}
-                priority
-                alt="Image-one"
-                width={500}
-                height={500}
-                loading={"eager"}
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  ...styleFitContainer(),
-                  display:
-                    theme === "light" || !isThemeMounted ? "none" : "inherit",
-                }}
-              />
-              <Image
-                src={"/images/after-light-mobile.webp"}
-                priority
-                alt="Image-one"
-                width={500}
-                height={500}
-                loading={"eager"}
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  ...styleFitContainer(),
-                  display:
-                    theme === "dark" || !isThemeMounted ? "none" : "inherit",
-                }}
-              />
+              {generateCompareImage("mobile", true, "light")}
+              {generateCompareImage("mobile", true, "dark")}
             </>
           }
           itemTwo={
             <>
-              <Image
-                src={"/images/before-dark-mobile.webp"}
-                alt="Image-two"
-                priority
-                width={500}
-                height={500}
-                loading={"eager"}
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  ...styleFitContainer(),
-                  display:
-                    theme === "light" || !isThemeMounted ? "none" : "inherit",
-                }}
-              />
-              <Image
-                src={"/images/before-light-mobile.webp"}
-                alt="Image-two"
-                priority
-                width={500}
-                height={500}
-                loading={"eager"}
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  ...styleFitContainer(),
-                  display:
-                    theme === "dark" || !isThemeMounted ? "none" : "inherit",
-                }}
-              />
+              {generateCompareImage("mobile", false, "light")}
+              {generateCompareImage("mobile", false, "dark")}
             </>
           }
           portrait
