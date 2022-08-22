@@ -3,9 +3,18 @@ import { OnlineEditor } from "@components";
 import { GetStaticProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { Page } from "types";
+import { NextSeo } from "next-seo";
+import { useTranslation } from "next-i18next";
 
 const OnlineEditing: Page = () => {
-  return <OnlineEditor />;
+  const { t } = useTranslation("online-editing");
+
+  return (
+    <>
+      <NextSeo title={t("HEAD_TITLE")} description={t("HEAD_DESCRIPTION")} />
+      <OnlineEditor />
+    </>
+  );
 };
 
 export default OnlineEditing;
