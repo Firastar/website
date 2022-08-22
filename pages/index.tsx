@@ -8,18 +8,10 @@ import {
 import { GetStaticProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { Page } from "types";
-import { NextSeo } from "next-seo";
-import { useTranslation } from "next-i18next";
 
 const Home: Page = () => {
-  const { t } = useTranslation();
-
   return (
     <>
-      <NextSeo
-        title={t("common:MAIN_TITLE")}
-        description={t("home:HEAD_DESCRIPTION")}
-      />
       <Header />
       <CompareSlider />
       <FeaturesSection />

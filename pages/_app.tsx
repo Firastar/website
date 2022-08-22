@@ -45,7 +45,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             site_name: t("MAIN_TITLE"),
             images: [
               {
-                url: "public/icons/mstile-310x310.png",
+                url: "/public/icons/mstile-310x310.png",
                 width: 310,
                 height: 310,
                 alt: "Og Image Firastar",
@@ -58,11 +58,6 @@ function MyApp({ Component, pageProps }: AppProps) {
               },
             ],
           }}
-          // twitter={{
-          //   handle: "@handle",
-          //   site: "@site",
-          //   cardType: "summary_large_image",
-          // }}
         />
         <Component {...pageProps} />
       </Layout>
