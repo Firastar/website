@@ -31,6 +31,7 @@ module.exports = {
       // gray
       "gray-dark": "#242526",
       "gray-light-shade": "#cbcbcb",
+      gray75: "#bfbfbf",
       // silver
       silver: "#D7D7D7",
       "sonic-silver": "#757575",

@@ -3,18 +3,18 @@
 }
 
 .desktop {
-	@apply hidden md:block;
+	@apply hidden md:block border border-gray75 rounded-lg;
 }
 
 .mobile {
-	@apply md:hidden;
+	@apply md:hidden border border-gray75 rounded-lg;
 }
 
 .handle {
-	@apply grid h-full place-content-center;
+	@apply grid place-content-center w-full h-[1px] md:w-[1px] md:h-full bg-gray75;
 }
 
 .arrow {
-	@apply inline-flex gap-x-3 px-1.5 py-3 rounded-[50%] bg-[#bfbfbf] bg-opacity-50 rotate-90;
+	@apply inline-flex gap-x-3 px-1.5 py-3 rounded-[50%] bg-gray75 bg-opacity-80 rotate-90;
 	@apply md:gap-x-4 md:px-2 md:py-4 md:rotate-0;
 }
