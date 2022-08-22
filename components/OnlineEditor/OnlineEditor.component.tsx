@@ -5,6 +5,7 @@ import { Button } from "@components";
 import autosize from "autosize";
 import { useTranslation } from "next-i18next";
 import { firast } from "@firastar/firastar-js";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 const OnlineEditor = () => {
   const { t } = useTranslation("online-editor");
@@ -68,12 +69,9 @@ const OnlineEditor = () => {
             dir="rtl"
             readOnly
           />
-          <Button
-            text={t("COPY_BUTTON")}
-            variant="secondary"
-            className={classes.copyBtn}
-            clickHandler={() => navigator.clipboard.writeText(textAfter)}
-          />
+          <CopyToClipboard text={textAfter}>
+            <button className={classes.copyBtn}>{t("COPY_BUTTON")}</button>
+          </CopyToClipboard>
         </div>
       </div>
     </div>
