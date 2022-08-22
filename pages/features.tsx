@@ -3,17 +3,9 @@ import { GetStaticProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { Page } from "types";
 import { NextSeo } from "next-seo";
-import { useTranslation } from "next-i18next";
 
 const Features: Page = () => {
-  const { t } = useTranslation("features");
-
-  return (
-    <>
-      <NextSeo title={t("HEAD_TITLE")} description={t("HEAD_DESCRIPTION")} />
-      <FeaturesPage />
-    </>
-  );
+  return <FeaturesPage />;
 };
 
 export default Features;
