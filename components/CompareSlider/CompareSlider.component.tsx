@@ -25,7 +25,11 @@ const CompareSlider = () => {
           }
           itemOne={
             <Image
-              src={`/images/after-${theme || "light"}.webp`}
+              src={
+                (theme || "light") === "light"
+                  ? require("../../public/images/after-light.webp")
+                  : require("../../public/images/after-dark.webp")
+              }
               width={2000}
               height={2000}
               quality="100%"
@@ -40,7 +44,11 @@ const CompareSlider = () => {
           }
           itemTwo={
             <Image
-              src={`/images/before-${theme || "light"}.webp`}
+              src={
+                (theme || "light") === "light"
+                  ? require("../../public/images/before-light.webp")
+                  : require("../../public/images/before-dark.webp")
+              }
               quality="100%"
               alt="Image-two"
               width={2000}
@@ -72,7 +80,11 @@ const CompareSlider = () => {
           }
           itemOne={
             <Image
-              src={`/images/after-${theme || "light"}-mobile.webp`}
+              src={
+                (theme || "light") === "light"
+                  ? require("../../public/images/after-light-mobile.webp")
+                  : require("../../public/images/after-dark-mobile.webp")
+              }
               quality="100%"
               alt="Image-one"
               width={500}
@@ -87,7 +99,11 @@ const CompareSlider = () => {
           }
           itemTwo={
             <Image
-              src={`/images/before-${theme || "light"}-mobile.webp`}
+              src={
+                (theme || "light") === "light"
+                  ? require("../../public/images/before-light-mobile.webp")
+                  : require("../../public/images/before-dark-mobile.webp")
+              }
               alt="Image-two"
               quality="100%"
               width={500}

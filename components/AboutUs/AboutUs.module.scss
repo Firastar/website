@@ -1,5 +1,5 @@
 .wrapper {
-	@apply min-h-[400px] lg:min-h-[calc(100vh_-_250px)] max-h-[62.5rem];
+	@apply min-h-[400px] lg:min-h-[calc(50vh)] max-h-[62.5rem];
 	@apply dark:bg-[url("/images/about-us-dark.jpg")] bg-[url("/images/about-us-light.jpg")];
 	@apply -mx-[2.1875rem] lg:-mx-[4.375rem] px-[2.9375rem] lg:px-[6.5rem];
 	@apply flex flex-col justify-center items-start;
