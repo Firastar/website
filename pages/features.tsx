@@ -2,13 +2,10 @@ import { FeaturesPage } from "@components";
 import { GetStaticProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { Page } from "types";
+import { NextSeo } from "next-seo";
 
 const Features: Page = () => {
-  return (
-    <>
-      <FeaturesPage />
-    </>
-  );
+  return <FeaturesPage />;
 };
 
 export default Features;
