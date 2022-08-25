@@ -26,8 +26,8 @@ const ThemeSwitcher = ({ mobileMode = false }: ThemeSwitcherProps) => {
           <Sun height={!mobileMode ? 20 : 18} width={!mobileMode ? 20 : 18} />
         ),
       }}
-      onChange={() => setTheme(theme === "light" ? "dark" : "light")}
-      checked={theme === "dark" ? true : false}
+      onChange={() => setTheme(theme === "dark" || !theme ? "light" : "dark")}
+      checked={theme === "light" || !theme ? false : true}
       aria-labelledby="toggle-theme"
       aria-label="toggle-theme"
     />

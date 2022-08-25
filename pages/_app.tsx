@@ -20,7 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [dir]);
 
   return (
-    <ThemeProvider attribute="class">
+    <ThemeProvider attribute="class" enableSystem={false}>
       <HeadTitle ns={Component?.ns} />
       <Layout type={Component?.layout}>
         <NextNProgress height={2} color="#15C39A" />

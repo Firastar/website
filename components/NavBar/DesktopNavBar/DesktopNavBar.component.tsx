@@ -94,7 +94,6 @@ const DesktopNavBar = ({ routes }: DesktopNavBarProps) => {
     callCounter = 0
   ) => {
     if (callCounter < 1 && router.pathname !== route.path) {
-      // console.log(router.pathname, route.path, route.hashId);
       scrollLockFlag.current = true;
       scrollSpyLockFlag.current = true;
       latestSelectedRoute.current = route.hashId;
